@@ -295,13 +295,13 @@ button { font: inherit; }
 }
 .signature-img {
   display: block;
-  height: clamp(48px, 11vw, 68px);
+  height: clamp(60px, 14vw, 88px);
   width: auto;
   max-width: 100%;
   filter: drop-shadow(0 0 10px rgba(20, 255, 227, 0.25));
 }
 .signature-img-footer {
-  height: 38px;
+  height: 54px;
   margin: 0 auto;
   filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(255, 255, 255, 0.15));
 }
@@ -535,6 +535,7 @@ button { font: inherit; }
   line-height: 1.2;
   padding: 4px 0 0;
   letter-spacing: -0.045em;
+  -webkit-text-stroke: 0.6px currentColor;
   text-transform: uppercase;
   color: var(--accent);
 }
@@ -731,6 +732,7 @@ button { font: inherit; }
   line-height: 1.2;
   padding: 4px 0;
   letter-spacing: -0.045em;
+  -webkit-text-stroke: 0.6px currentColor;
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 4px;
@@ -832,6 +834,7 @@ button { font: inherit; }
   font-weight: 400;
   font-size: 30px;
   letter-spacing: -0.045em;
+  -webkit-text-stroke: 0.6px currentColor;
   text-transform: uppercase;
   line-height: 1.15;
   padding: 2px 0;
@@ -842,8 +845,8 @@ button { font: inherit; }
   font-family: "Protest Riot", cursive;
   font-weight: 400;
   font-size: 1.1em;
-  text-transform: none;
-  letter-spacing: 0.005em;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
   color: var(--accent);
   margin-bottom: 0;
 }
