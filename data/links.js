@@ -25,7 +25,7 @@ const SITE_DATA = {
   // PORTUGUÊS (padrão)
   // ================================================================
   pt: {
-    ui: { eyebrow: "Ecossistema", inscreverSe: "Inscrever-se" },
+    ui: { eyebrow: "Ecossistema", inscreverSe: "Inscrever-se", agendaHeading: "Palestras, Cursos e Eventos" },
     hero: {
       avatar: "images/avatar.png",
       nome: "Gabriel Bussinger",
@@ -116,7 +116,7 @@ const SITE_DATA = {
           ]
         },
         {
-          titulo: '<span class="accent-word">Canal</span> do Youtube',
+          titulo: 'Canal do <span class="accent-word">Youtube</span>',
           descricao: "Palestras, Podcasts e conteúdos aprofundados, para profissionais do futebol",
           url: "https://www.youtube.com/@gabrielbussinger3386",
           icone: "youtube"
@@ -143,7 +143,7 @@ const SITE_DATA = {
   // ENGLISH
   // ================================================================
   en: {
-    ui: { eyebrow: "Ecosystem", inscreverSe: "Sign up" },
+    ui: { eyebrow: "Ecosystem", inscreverSe: "Sign up", agendaHeading: "Talks, Courses & Events" },
     hero: {
       avatar: "images/avatar.png",
       nome: "Gabriel Bussinger",
@@ -233,7 +233,7 @@ const SITE_DATA = {
           ]
         },
         {
-          titulo: '<span class="accent-word">YouTube</span> Channel',
+          titulo: 'YouTube <span class="accent-word">Channel</span>',
           descricao: "Talks, podcasts and in-depth content for football professionals",
           url: "https://www.youtube.com/@gabrielbussinger3386",
           icone: "youtube"
@@ -260,7 +260,7 @@ const SITE_DATA = {
   // ESPAÑOL
   // ================================================================
   es: {
-    ui: { eyebrow: "Ecosistema", inscreverSe: "Inscribirse" },
+    ui: { eyebrow: "Ecosistema", inscreverSe: "Inscribirse", agendaHeading: "Charlas, Cursos y Eventos" },
     hero: {
       avatar: "images/avatar.png",
       nome: "Gabriel Bussinger",
@@ -350,7 +350,7 @@ const SITE_DATA = {
           ]
         },
         {
-          titulo: '<span class="accent-word">Canal</span> de YouTube',
+          titulo: 'Canal de <span class="accent-word">YouTube</span>',
           descricao: "Charlas, podcasts y contenidos a profundidad, para profesionales del fútbol",
           url: "https://www.youtube.com/@gabrielbussinger3386",
           icone: "youtube"
@@ -377,7 +377,7 @@ const SITE_DATA = {
   // العربية (ARABIC) — ⚠️ revisar com falante nativo antes de publicar
   // ================================================================
   ar: {
-    ui: { eyebrow: "منظومة", inscreverSe: "سجّل الآن" },
+    ui: { eyebrow: "منظومة", inscreverSe: "سجّل الآن", agendaHeading: "محاضرات ودورات وفعاليات" },
     hero: {
       avatar: "images/avatar.png",
       nome: "غابرييل بوسينجر",
@@ -467,7 +467,7 @@ const SITE_DATA = {
           ]
         },
         {
-          titulo: '<span class="accent-word">قناة</span> يوتيوب',
+          titulo: 'قناة <span class="accent-word">يوتيوب</span>',
           descricao: "محاضرات وبودكاست ومحتوى معمّق لمحترفي كرة القدم",
           url: "https://www.youtube.com/@gabrielbussinger3386",
           icone: "youtube"

@@ -150,6 +150,7 @@
     d.grupo1.links.forEach((link, i) => g1.appendChild(renderLinkRow(link, i * 0.06)));
 
     // Agenda
+    $("#agenda-heading").textContent = d.ui.agendaHeading;
     const agendaHost = $("#agenda-lista");
     d.agenda.eventos.forEach((ev, i) => agendaHost.appendChild(renderAgendaRow(ev, i * 0.06, d.ui.inscreverSe)));
 

@@ -16,12 +16,11 @@
   --glass: rgba(245, 245, 245, 0.045);
   --glass-hover: rgba(245, 245, 245, 0.08);
 
-  /* Testando Kalam (manuscrita, com bom peso nativo em Bold) nos títulos.
+  /* Anton nos títulos (condensada, moderna, alto impacto).
      Carlito nos demais textos. */
-  --font-display: "Kalam", "Carlito", cursive;
-  --font-tag: "Kalam", "Carlito", cursive;
+  --font-display: "Anton", "Carlito", sans-serif;
+  --font-tag: "Anton", "Carlito", sans-serif;
   --font-body: "Carlito", sans-serif;
-  --font-body: "Fredoka", sans-serif;
   --font-accent: "Instrument Serif", serif;
 
   --col-max: 620px;
@@ -291,9 +290,9 @@ button { font: inherit; }
 
 .hero-v2 h1 {
   font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(26px, 6vw, 36px);
-  line-height: 1.3;
+  font-weight: 400;
+  font-size: clamp(30px, 7vw, 42px);
+  line-height: 1.15;
   letter-spacing: -0.01em;
   text-transform: uppercase;
   white-space: nowrap;
@@ -464,11 +463,11 @@ button { font: inherit; }
 .panel-title {
   display: block;
   font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 1.25;
+  font-weight: 400;
+  font-size: 27px;
+  line-height: 1.2;
   padding: 4px 0 0;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.005em;
   text-transform: uppercase;
   color: var(--accent);
 }
@@ -481,19 +480,29 @@ button { font: inherit; }
 /* ==========================================================================
    Agenda de próximos eventos
    ========================================================================== */
-.agenda-list {
-  list-style: none;
-  margin: 18px 0 0;
-  padding: 18px 0 0;
+.agenda-heading {
+  margin: 18px 0 12px;
+  padding-top: 18px;
   border-top: 1px solid var(--border);
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
-.agenda-list:first-child {
+.agenda-heading:first-child {
   margin-top: 0;
   padding-top: 0;
   border-top: none;
+}
+.agenda-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 .agenda-card {
   position: relative;
@@ -658,11 +667,11 @@ button { font: inherit; }
 .diario-title {
   display: block;
   font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 25px;
-  line-height: 1.25;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.2;
   padding: 4px 0;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.005em;
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 4px;
@@ -759,11 +768,11 @@ button { font: inherit; }
 .link-card.is-featured .title {
   color: #000;
   font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 27px;
-  letter-spacing: -0.01em;
+  font-weight: 400;
+  font-size: 30px;
+  letter-spacing: -0.005em;
   text-transform: uppercase;
-  line-height: 1.25;
+  line-height: 1.15;
   padding: 2px 0;
   display: block;
 }
@@ -972,7 +981,21 @@ button { font: inherit; }
 @media (max-width: 640px) {
   .page { padding-top: 44px; }
   .avatar-wrap { width: 128px; height: 128px; }
-  .hero-v2 h1 { font-size: 30px; }
+  .hero-v2 h1 { font-size: 32px; }
+
+  /* Cabeçalho "Diário do Treinador": ícone e textos centralizados no mobile */
+  .diario-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+  .diario-eyebrow,
+  .diario-title,
+  .diario-slogan {
+    display: block;
+    text-align: center;
+  }
   .pitch-light { width: 70vw; height: 40vh; filter: blur(50px); }
 
   /* Títulos dos botões normais: tenta caber numa linha, mas se não couber
@@ -996,8 +1019,8 @@ button { font: inherit; }
   .link-card.is-featured .link-icon svg { width: 21px; height: 21px; }
   .link-badge { font-size: 9px; padding: 2px 8px; }
   .link-card.is-featured .title {
-    font-size: 17px;
-    line-height: 1.22;
+    font-size: 19px;
+    line-height: 1.18;
     white-space: normal;
     display: block;
     overflow: visible;
@@ -1014,5 +1037,5 @@ button { font: inherit; }
   .page { padding-left: 16px; padding-right: 16px; }
   .link-card { padding: 13px; }
   .link-body .title { font-size: 12.5px; }
-  .link-card.is-featured .title { font-size: 15.5px; }
+  .link-card.is-featured .title { font-size: 17px; }
 }
