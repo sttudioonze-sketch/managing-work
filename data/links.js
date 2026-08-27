@@ -15,7 +15,7 @@
  * ===================================================================
  */
 
-const SUPORTE_URL = "https://www.instagram.com/luisestevessttudio11?igsh=dnYydGlwdWZlZmxq";
+const SUPORTE_URL = "https://wa.me/5551991736138";
 
 const SITE_DATA = {
 
