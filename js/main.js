@@ -129,7 +129,7 @@
 
     const rolesHost = $("#hero-roles");
     rolesHost.innerHTML = (d.hero.roleLines || [])
-      .map((line) => `<p class="role-line">${line.split("|").map(s => s.trim()).join(' <span class="sep">|</span> ')}</p>`)
+      .map((line, i) => `<p class="role-line${i === 0 ? " is-primary" : ""}">${line.split("|").map(s => s.trim()).join(' <span class="sep">|</span> ')}</p>`)
       .join("");
 
     // Ícones sociais
@@ -208,47 +208,28 @@
     const wrap = $("#lang-switcher");
     if (!wrap) return;
 
-    const current = LANGS.find((l) => l.code === currentLang);
-    wrap.innerHTML = `
-      <button type="button" class="lang-btn" id="lang-toggle" aria-haspopup="true" aria-expanded="false">
-        <span class="lang-flag">${current.flag}</span>
-        <svg class="lang-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    wrap.innerHTML = LANGS.map((l) => `
+      <button
+        type="button"
+        class="lang-option${l.code === currentLang ? " is-active" : ""}"
+        data-lang="${l.code}"
+        title="${l.label}"
+        aria-label="${l.label}"
+        aria-pressed="${l.code === currentLang}"
+      >
+        <span class="lang-flag">${l.flag}</span>
       </button>
-      <ul class="lang-menu" id="lang-menu" role="menu">
-        ${LANGS.map((l) => `
-          <li>
-            <button type="button" class="lang-option${l.code === currentLang ? " is-active" : ""}" data-lang="${l.code}" role="menuitem">
-              <span class="lang-flag">${l.flag}</span>
-              <span>${l.label}</span>
-            </button>
-          </li>
-        `).join("")}
-      </ul>
-    `;
+    `).join("");
 
-    const toggleBtn = $("#lang-toggle");
-    const menu = $("#lang-menu");
-
-    toggleBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const isOpen = wrap.classList.toggle("is-open");
-      toggleBtn.setAttribute("aria-expanded", String(isOpen));
-    });
-
-    menu.querySelectorAll(".lang-option").forEach((btn) => {
+    wrap.querySelectorAll(".lang-option").forEach((btn) => {
       btn.addEventListener("click", () => {
         const lang = btn.getAttribute("data-lang");
-        if (lang === currentLang) { wrap.classList.remove("is-open"); return; }
+        if (lang === currentLang) return;
         currentLang = lang;
         localStorage.setItem("dt_lang", lang);
         render();
         renderLangSwitcher();
-        wrap.classList.remove("is-open");
       });
-    });
-
-    document.addEventListener("click", (e) => {
-      if (!wrap.contains(e.target)) wrap.classList.remove("is-open");
     });
   }
 
