@@ -83,26 +83,37 @@
     cursor.className = "tw-cursor";
     el.appendChild(cursor);
 
-    const STEP = 45; // ms entre cada caractere
-    const PAUSE = 10000; // ms parado antes de reiniciar
+    const STEP_MIN = 35;   // ms mínimo entre letras
+    const STEP_MAX = 85;   // ms máximo entre letras (varia pra parecer mais natural)
+    const WORD_PAUSE = 160; // ms extra de pausa ao terminar uma palavra (no espaço)
+    const PAUSE = 10000;   // ms parado antes de reiniciar
 
     function cycle() {
       let i = 0;
-      const typeTimer = setInterval(() => {
+      function tick() {
         if (i < chars.length) {
-          chars[i].classList.add("is-in");
+          const char = chars[i];
+          char.classList.add("is-in");
+          // move o cursor pra logo depois da letra que acabou de aparecer
+          char.insertAdjacentElement("afterend", cursor);
+          const isSpace = char.textContent === " ";
+          const delay = isSpace
+            ? WORD_PAUSE
+            : STEP_MIN + Math.random() * (STEP_MAX - STEP_MIN);
           i++;
+          setTimeout(tick, delay);
         } else {
-          clearInterval(typeTimer);
           setTimeout(() => {
             chars.forEach((c) => c.classList.remove("is-in"));
+            el.insertBefore(cursor, el.firstChild);
             setTimeout(cycle, 250);
           }, PAUSE);
         }
-      }, STEP);
+      }
+      tick();
     }
 
-    return { start: cycle, totalDuration: (chars.length * STEP) / 1000 };
+    return { start: cycle, totalDuration: (chars.length * STEP_MAX) / 1000 };
   }
 
   function renderLinkRow(link, delay) {
@@ -223,7 +234,7 @@
       badgesHost.innerHTML = (d.hero.badges || [])
         .map((b) => `
           <span class="cred-badge">
-            <span class="cred-indicator"><span class="cred-ring"></span><span class="cred-dot"></span></span>
+            <span class="cred-indicator"><span class="cred-dot"></span></span>
             ${b.label} <strong>${b.org}</strong>
           </span>
         `)

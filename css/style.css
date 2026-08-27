@@ -356,31 +356,18 @@ button { font: inherit; }
 }
 .cred-indicator {
   position: relative;
-  width: 13px;
-  height: 13px;
+  width: 8px;
+  height: 8px;
   flex: none;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.cred-ring {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  border: 1px solid rgba(20, 255, 227, 0.22);
-  border-top-color: var(--accent);
-  animation: credSpin 2.4s linear infinite;
-}
 .cred-dot {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 4px 1px rgba(20, 255, 227, 0.6);
-  animation: credBlink 1.7s ease-in-out infinite;
-}
-@keyframes credSpin {
-  to { transform: rotate(360deg); }
 }
 @keyframes credBlink {
   0%, 100% { opacity: 1; }
@@ -863,7 +850,7 @@ button { font: inherit; }
   font-family: "Caveat", cursive;
   font-weight: 700;
   font-size: 1.15em;
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: 0.01em;
   color: var(--accent);
   margin-bottom: 0;
