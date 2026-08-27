@@ -860,16 +860,20 @@ button { font: inherit; }
 }
 .link-card.is-featured .title .accent-word {
   display: block;
-  font-family: "Kalam", cursive;
+  font-family: "Caveat", cursive;
   font-weight: 700;
-  font-size: 0.78em;
-  text-transform: none;
-  letter-spacing: 0;
+  font-size: 1.15em;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
   color: var(--accent);
-  margin-bottom: 1px;
+  margin-bottom: 0;
 }
 
 /* Efeito de digitação no título dos cards em destaque */
+.tw-word {
+  display: inline-block;
+  white-space: nowrap;
+}
 .tw-char {
   display: inline-block;
   white-space: pre;
@@ -883,15 +887,14 @@ button { font: inherit; }
 }
 .tw-cursor {
   display: inline-block;
-  width: 7px;
-  height: 7px;
-  margin-left: 5px;
-  margin-bottom: 2px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 5px 1px rgba(20, 255, 227, 0.6);
+  width: 2px;
+  height: 0.85em;
+  margin-left: 3px;
+  margin-bottom: -0.1em;
+  border-radius: 1px;
+  background: rgba(20, 255, 227, 0.55);
   vertical-align: middle;
-  animation: credBlink 0.9s step-end infinite;
+  animation: credBlink 1.1s ease-in-out infinite;
 }
 
 /* Entrada suave e escalonada dos demais elementos do card (badge, subtítulo,

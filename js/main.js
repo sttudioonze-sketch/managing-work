@@ -49,13 +49,28 @@
     function walk(node) {
       Array.from(node.childNodes).forEach((child) => {
         if (child.nodeType === 3) {
+          const words = child.textContent.split(" ");
           const frag = document.createDocumentFragment();
-          Array.from(child.textContent).forEach((ch) => {
-            const span = document.createElement("span");
-            span.className = "tw-char";
-            span.textContent = ch;
-            frag.appendChild(span);
-            chars.push(span);
+          words.forEach((word, wi) => {
+            if (word.length) {
+              const wordSpan = document.createElement("span");
+              wordSpan.className = "tw-word";
+              Array.from(word).forEach((ch) => {
+                const span = document.createElement("span");
+                span.className = "tw-char";
+                span.textContent = ch;
+                wordSpan.appendChild(span);
+                chars.push(span);
+              });
+              frag.appendChild(wordSpan);
+            }
+            if (wi < words.length - 1) {
+              const spaceSpan = document.createElement("span");
+              spaceSpan.className = "tw-char";
+              spaceSpan.textContent = " ";
+              frag.appendChild(spaceSpan);
+              chars.push(spaceSpan);
+            }
           });
           child.replaceWith(frag);
         } else if (child.nodeType === 1) {
@@ -69,7 +84,7 @@
     el.appendChild(cursor);
 
     const STEP = 45; // ms entre cada caractere
-    const PAUSE = 3000; // ms parado antes de reiniciar
+    const PAUSE = 10000; // ms parado antes de reiniciar
 
     function cycle() {
       let i = 0;
