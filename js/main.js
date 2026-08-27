@@ -83,10 +83,12 @@
     cursor.className = "tw-cursor";
     el.appendChild(cursor);
 
-    const STEP_MIN = 35;   // ms mínimo entre letras
-    const STEP_MAX = 85;   // ms máximo entre letras (varia pra parecer mais natural)
-    const WORD_PAUSE = 160; // ms extra de pausa ao terminar uma palavra (no espaço)
-    const PAUSE = 10000;   // ms parado antes de reiniciar
+    const STEP_MIN = 30;    // ms mínimo entre letras
+    const STEP_MAX = 110;   // ms máximo entre letras (mais variação = mais orgânico)
+    const WORD_PAUSE = 180; // ms extra de pausa ao terminar uma palavra (no espaço)
+    const THINK_CHANCE = 0.06; // chance de uma pausa maior no meio de uma palavra, como se a pessoa hesitasse
+    const THINK_PAUSE = 260;   // ms dessa pausa de "hesitação"
+    const PAUSE = 10000;    // ms parado antes de reiniciar
 
     function cycle() {
       let i = 0;
@@ -97,9 +99,10 @@
           // move o cursor pra logo depois da letra que acabou de aparecer
           char.insertAdjacentElement("afterend", cursor);
           const isSpace = char.textContent === " ";
-          const delay = isSpace
+          let delay = isSpace
             ? WORD_PAUSE
             : STEP_MIN + Math.random() * (STEP_MAX - STEP_MIN);
+          if (!isSpace && Math.random() < THINK_CHANCE) delay += THINK_PAUSE;
           i++;
           setTimeout(tick, delay);
         } else {
@@ -119,7 +122,7 @@
   function renderLinkRow(link, delay) {
     const li = document.createElement("li");
     const a = document.createElement("a");
-    a.className = "link-card" + (link.featured ? " is-featured" : "");
+    a.className = "link-card" + (link.featured ? " is-featured" : "") + (link.centered ? " is-centered" : "");
     a.href = link.url;
     a.target = (link.url.startsWith("mailto:") || link.internal) ? "_self" : "_blank";
     a.rel = "noopener noreferrer";
@@ -135,7 +138,7 @@
 
     a.innerHTML = `
       <span class="link-body">
-        ${link.badge ? `<span class="link-badge">${link.badge}</span>` : ""}
+        ${link.badge ? `<span class="link-badge">${link.badgeIcon ? `<span class="link-badge-icon">${iconSvg(link.badgeIcon)}</span>` : ""}${link.badge}</span>` : ""}
         <span class="title">${link.titulo}</span>
         ${link.subtitulo ? `<span class="subtitle">${link.subtitulo}</span>` : ""}
         <span class="desc">${link.descricao || ""}</span>
@@ -240,11 +243,15 @@
     const heroAvatar = $("#hero-avatar");
     if (heroAvatar) {
       heroAvatar.src = d.hero.avatar;
-      $("#hero-nome").textContent = d.hero.nome;
+      $("#hero-nome").innerHTML = `<img src="images/assinatura-gabriel.png" alt="${d.hero.nome}" class="signature-img" />`;
 
       const rolesHost = $("#hero-roles");
       rolesHost.innerHTML = (d.hero.roleLines || [])
-        .map((line, i) => `<p class="role-line${i === 0 ? " is-primary" : ""}">${line.split("|").map(s => s.trim()).join(' <span class="sep">|</span> ')}</p>`)
+        .map((line, i) => {
+          const parts = line.split("|").map(s => s.trim());
+          const sep = i === 0 ? ' <span class="sep">|</span> ' : ' <span class="role-dot"></span> ';
+          return `<p class="role-line${i === 0 ? " is-primary" : ""}">${parts.join(sep)}</p>`;
+        })
         .join("");
 
       const badgesHost = $("#cred-badges");
@@ -330,7 +337,7 @@
     // ---------- Footer (as duas páginas) ----------
     const footerNome = $("#footer-nome");
     if (footerNome) {
-      footerNome.textContent = d.footer.nome;
+      footerNome.innerHTML = `<img src="images/assinatura-gabriel.png" alt="${d.footer.nome}" class="signature-img signature-img-footer" />`;
       renderSocialRow($("#footer-social"), d.socialRow);
       $("#footer-ecossistema").textContent = d.footer.ecossistema;
 
