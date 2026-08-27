@@ -41,6 +41,38 @@
     return ICONS[key] || ICONS.arrow;
   }
 
+  // Efeito de "digitação": separa o texto de um título em spans por caractere,
+  // preservando tags internas (como o <span class="accent-word">), e adiciona
+  // um cursor piscando no final. A animação em si só roda quando o card ganha
+  // a classe "is-visible" (ver CSS: animation-play-state pausado até lá).
+  function typewriterize(el) {
+    let counter = 0;
+    const STEP = 0.045; // segundos entre cada caractere
+    function walk(node) {
+      Array.from(node.childNodes).forEach((child) => {
+        if (child.nodeType === 3) {
+          const frag = document.createDocumentFragment();
+          Array.from(child.textContent).forEach((ch) => {
+            const span = document.createElement("span");
+            span.className = "tw-char";
+            span.style.animationDelay = (counter * STEP).toFixed(3) + "s";
+            span.textContent = ch;
+            frag.appendChild(span);
+            counter++;
+          });
+          child.replaceWith(frag);
+        } else if (child.nodeType === 1) {
+          walk(child);
+        }
+      });
+    }
+    walk(el);
+    const cursor = document.createElement("span");
+    cursor.className = "tw-cursor";
+    el.appendChild(cursor);
+    return counter * STEP;
+  }
+
   function renderLinkRow(link, delay) {
     const li = document.createElement("li");
     const a = document.createElement("a");
@@ -75,6 +107,20 @@
     `;
     a.prepend(iconWrap);
     attachGlow(a);
+
+    if (link.featured) {
+      const badgeEl = a.querySelector(".link-badge");
+      if (badgeEl) badgeEl.style.transitionDelay = "0.05s";
+
+      const titleEl = a.querySelector(".title");
+      const typingDuration = typewriterize(titleEl);
+      const stagger = [".subtitle", ".desc", ".cta-line", ".mini-strip"];
+      stagger.forEach((sel, i) => {
+        const el = a.querySelector(sel);
+        if (el) el.style.transitionDelay = (typingDuration + 0.12 + i * 0.09).toFixed(2) + "s";
+      });
+    }
+
     li.appendChild(a);
     return li;
   }
