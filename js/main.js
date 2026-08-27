@@ -82,6 +82,7 @@
         <span class="tema">${evento.tema}</span>
         <span class="agenda-meta">
           <span class="local">${evento.local}</span>
+          ${evento.horario ? `<span class="agenda-hora">${evento.horario}</span>` : ""}
           <span class="agenda-format">${evento.formato || "Online"}</span>
         </span>
       </span>
