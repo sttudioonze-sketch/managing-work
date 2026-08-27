@@ -44,7 +44,8 @@ const SITE_DATA = {
       avatar: "images/avatar.png",
       nome: "Gabriel Bussinger",
       roleLines: [
-        "Coordenador Técnico Geral no Vasco da Gama SAF"
+        "Coordenador Técnico Geral no Vasco da Gama SAF",
+        "Mentor de Profissionais do Futebol | Idealizador do Podcast Diário do Treinador"
       ],
       badges: [
         { label: "Instrutor", org: "CONMEBOL" },
@@ -61,6 +62,8 @@ const SITE_DATA = {
       links: [
         {
           titulo: 'Assinar <span class="accent-word">Newsletter</span>',
+          badge: "Acompanhe",
+          badgeIcon: "linkedin",
           descricao: "Acompanhe no LinkedIn",
           url: "https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7462991799133855744",
           icone: "linkedin"
@@ -100,6 +103,8 @@ const SITE_DATA = {
       url: "diario-do-treinador.html",
       icone: "books",
       featured: true,
+      centered: true,
+      cta: "Entrar no Ecossistema",
       internal: true
     },
     grupo2: {
@@ -179,7 +184,8 @@ const SITE_DATA = {
       avatar: "images/avatar.png",
       nome: "Gabriel Bussinger",
       roleLines: [
-        "General Technical Coordinator at Vasco da Gama SAF"
+        "General Technical Coordinator at Vasco da Gama SAF",
+        "Mentor for Football Professionals | Creator of the Coach's Diary Podcast"
       ],
       badges: [
         { label: "Instructor", org: "CONMEBOL" },
@@ -196,6 +202,8 @@ const SITE_DATA = {
       links: [
         {
           titulo: 'Subscribe to my <span class="accent-word">Newsletter</span>',
+          badge: "Follow",
+          badgeIcon: "linkedin",
           descricao: "Follow on LinkedIn",
           url: "https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7462991799133855744",
           icone: "linkedin"
@@ -235,6 +243,8 @@ const SITE_DATA = {
       url: "diario-do-treinador.html",
       icone: "books",
       featured: true,
+      centered: true,
+      cta: "Enter the Ecosystem",
       internal: true
     },
     grupo2: {
@@ -314,7 +324,8 @@ const SITE_DATA = {
       avatar: "images/avatar.png",
       nome: "Gabriel Bussinger",
       roleLines: [
-        "Coordinador Técnico General en Vasco da Gama SAF"
+        "Coordinador Técnico General en Vasco da Gama SAF",
+        "Mentor de Profesionales del Fútbol | Creador del Podcast Diario del Entrenador"
       ],
       badges: [
         { label: "Instructor", org: "CONMEBOL" },
@@ -331,6 +342,8 @@ const SITE_DATA = {
       links: [
         {
           titulo: 'Suscribirme al <span class="accent-word">Newsletter</span>',
+          badge: "Sígueme",
+          badgeIcon: "linkedin",
           descricao: "Sígueme en LinkedIn",
           url: "https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7462991799133855744",
           icone: "linkedin"
@@ -370,6 +383,8 @@ const SITE_DATA = {
       url: "diario-do-treinador.html",
       icone: "books",
       featured: true,
+      centered: true,
+      cta: "Entrar al Ecosistema",
       internal: true
     },
     grupo2: {
@@ -449,7 +464,8 @@ const SITE_DATA = {
       avatar: "images/avatar.png",
       nome: "غابرييل بوسينجر",
       roleLines: [
-        "المنسق الفني العام في فاسكو دا جاما SAF"
+        "المنسق الفني العام في فاسكو دا جاما SAF",
+        "موجّه لمحترفي كرة القدم | مؤسس بودكاست يوميات المدرب"
       ],
       badges: [
         { label: "مدرب", org: "CONMEBOL" },
@@ -466,6 +482,8 @@ const SITE_DATA = {
       links: [
         {
           titulo: 'اشترك في <span class="accent-word">النشرة الإخبارية</span>',
+          badge: "تابعني",
+          badgeIcon: "linkedin",
           descricao: "تابعني على LinkedIn",
           url: "https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7462991799133855744",
           icone: "linkedin"
@@ -505,6 +523,8 @@ const SITE_DATA = {
       url: "diario-do-treinador.html",
       icone: "books",
       featured: true,
+      centered: true,
+      cta: "ادخل إلى المنظومة",
       internal: true
     },
     grupo2: {
