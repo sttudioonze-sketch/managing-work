@@ -98,7 +98,6 @@ const SITE_DATA = {
           badge: "Temporada 2026 — Inscrições disponíveis",
           subtitulo: "Conheça, aplique e transforme",
           descricao: "Desenvolvimento Profissional e Pessoal para Treinadores e profissionais do futebol",
-          cta: "Inscreva-se!",
           url: "https://pay.hotmart.com/I103504037F?off=nhfhufix",
           icone: "target",
           featured: true
@@ -218,7 +217,6 @@ const SITE_DATA = {
           badge: "2026 Season — Enrollment open",
           subtitulo: "Learn it, apply it, transform",
           descricao: "Professional and personal development for coaches and football professionals",
-          cta: "Enroll now!",
           url: "https://pay.hotmart.com/I103504037F?off=nhfhufix",
           icone: "target",
           featured: true
@@ -338,7 +336,6 @@ const SITE_DATA = {
           badge: "Temporada 2026 — Inscripciones abiertas",
           subtitulo: "Conoce, aplica, transforma",
           descricao: "Desarrollo profesional y personal para entrenadores y profesionales del fútbol",
-          cta: "¡Inscríbete!",
           url: "https://pay.hotmart.com/I103504037F?off=nhfhufix",
           icone: "target",
           featured: true
@@ -458,7 +455,6 @@ const SITE_DATA = {
           badge: "موسم 2026 — التسجيل متاح",
           subtitulo: "تعرّف، طبّق، تحوّل",
           descricao: "تطور مهني وشخصي للمدربين ومحترفي كرة القدم",
-          cta: "سجّل الآن!",
           url: "https://pay.hotmart.com/I103504037F?off=nhfhufix",
           icone: "target",
           featured: true

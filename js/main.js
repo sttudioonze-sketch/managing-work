@@ -41,13 +41,11 @@
     return ICONS[key] || ICONS.arrow;
   }
 
-  // Efeito de "digitação": separa o texto de um título em spans por caractere,
-  // preservando tags internas (como o <span class="accent-word">), e adiciona
-  // um cursor piscando no final. A animação em si só roda quando o card ganha
-  // a classe "is-visible" (ver CSS: animation-play-state pausado até lá).
+  // Efeito de "digitação" em loop: separa o texto de um título em spans por
+  // caractere (preservando tags internas, como o accent-word), revela um a
+  // um, e depois de terminar espera 3s e digita de novo, em loop.
   function typewriterize(el) {
-    let counter = 0;
-    const STEP = 0.045; // segundos entre cada caractere
+    const chars = [];
     function walk(node) {
       Array.from(node.childNodes).forEach((child) => {
         if (child.nodeType === 3) {
@@ -55,10 +53,9 @@
           Array.from(child.textContent).forEach((ch) => {
             const span = document.createElement("span");
             span.className = "tw-char";
-            span.style.animationDelay = (counter * STEP).toFixed(3) + "s";
             span.textContent = ch;
             frag.appendChild(span);
-            counter++;
+            chars.push(span);
           });
           child.replaceWith(frag);
         } else if (child.nodeType === 1) {
@@ -70,7 +67,27 @@
     const cursor = document.createElement("span");
     cursor.className = "tw-cursor";
     el.appendChild(cursor);
-    return counter * STEP;
+
+    const STEP = 45; // ms entre cada caractere
+    const PAUSE = 3000; // ms parado antes de reiniciar
+
+    function cycle() {
+      let i = 0;
+      const typeTimer = setInterval(() => {
+        if (i < chars.length) {
+          chars[i].classList.add("is-in");
+          i++;
+        } else {
+          clearInterval(typeTimer);
+          setTimeout(() => {
+            chars.forEach((c) => c.classList.remove("is-in"));
+            setTimeout(cycle, 250);
+          }, PAUSE);
+        }
+      }, STEP);
+    }
+
+    return { start: cycle, totalDuration: (chars.length * STEP) / 1000 };
   }
 
   function renderLinkRow(link, delay) {
@@ -113,12 +130,14 @@
       if (badgeEl) badgeEl.style.transitionDelay = "0.05s";
 
       const titleEl = a.querySelector(".title");
-      const typingDuration = typewriterize(titleEl);
+      const typewriter = typewriterize(titleEl);
       const stagger = [".subtitle", ".desc", ".cta-line", ".mini-strip"];
       stagger.forEach((sel, i) => {
         const el = a.querySelector(sel);
-        if (el) el.style.transitionDelay = (typingDuration + 0.12 + i * 0.09).toFixed(2) + "s";
+        if (el) el.style.transitionDelay = (typewriter.totalDuration + 0.12 + i * 0.09).toFixed(2) + "s";
       });
+      // Guarda a função de início — só dispara quando o card entrar na tela
+      a._startTyping = typewriter.start;
     }
 
     li.appendChild(a);
@@ -269,6 +288,7 @@
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               entry.target.classList.add("is-visible");
+              if (typeof entry.target._startTyping === "function") entry.target._startTyping();
               observer.unobserve(entry.target);
             }
           });
@@ -277,7 +297,10 @@
       );
       revealTargets.forEach((el) => observer.observe(el));
     } else {
-      revealTargets.forEach((el) => el.classList.add("is-visible"));
+      revealTargets.forEach((el) => {
+        el.classList.add("is-visible");
+        if (typeof el._startTyping === "function") el._startTyping();
+      });
     }
   }
 

@@ -835,12 +835,12 @@ button { font: inherit; }
 /* Cards em destaque — maiores e em cor diferenciada (ciano → azul) */
 .link-card.is-featured {
   align-items: flex-start;
-  background: linear-gradient(135deg, rgba(20, 255, 227, 0.16) 0%, rgba(20, 255, 227, 0.05) 55%, rgba(58, 139, 255, 0.12) 100%);
+  background: linear-gradient(135deg, rgba(20, 255, 227, 0.24) 0%, rgba(20, 255, 227, 0.09) 55%, rgba(58, 139, 255, 0.18) 100%);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(20, 255, 227, 0.4);
+  border: 1px solid rgba(20, 255, 227, 0.48);
   padding: 20px 20px;
-  box-shadow: 0 0 0 1px rgba(20, 255, 227, 0.14);
+  box-shadow: 0 0 0 1px rgba(20, 255, 227, 0.16);
   animation: featuredGlow 2.6s ease-in-out infinite;
 }
 @keyframes featuredGlow {
@@ -859,7 +859,14 @@ button { font: inherit; }
   display: block;
 }
 .link-card.is-featured .title .accent-word {
+  display: block;
+  font-family: "Kalam", cursive;
+  font-weight: 700;
+  font-size: 0.78em;
+  text-transform: none;
+  letter-spacing: 0;
   color: var(--accent);
+  margin-bottom: 1px;
 }
 
 /* Efeito de digitação no título dos cards em destaque */
@@ -868,15 +875,11 @@ button { font: inherit; }
   white-space: pre;
   opacity: 0;
   transform: translateY(3px);
-  animation: twIn 0.22s ease forwards;
-  animation-play-state: paused;
+  transition: opacity 0.18s ease, transform 0.18s ease;
 }
-.link-card.is-featured.is-visible .tw-char {
-  animation-play-state: running;
-}
-@keyframes twIn {
-  from { opacity: 0; transform: translateY(3px); }
-  to   { opacity: 1; transform: translateY(0); }
+.tw-char.is-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 .tw-cursor {
   display: inline-block;
