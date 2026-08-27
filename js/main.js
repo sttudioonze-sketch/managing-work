@@ -1,6 +1,17 @@
 (function () {
   const $ = (sel, ctx) => (ctx || document).querySelector(sel);
 
+  const LANGS = [
+    { code: "pt", flag: "🇧🇷", label: "Português" },
+    { code: "en", flag: "🇺🇸", label: "English" },
+    { code: "es", flag: "🇪🇸", label: "Español" }
+    // Árabe removido temporariamente do seletor — a tradução continua pronta
+    // em data/links.js (bloco "ar"). Pra reativar, é só descomentar a linha:
+    // , { code: "ar", flag: "🇸🇦", label: "العربية" }
+  ];
+  let currentLang = localStorage.getItem("dt_lang") || "pt";
+  if (!SITE_DATA[currentLang] || !LANGS.some((l) => l.code === currentLang)) currentLang = "pt";
+
   // Cores por marca — dá identidade visual a cada ícone (como na referência)
   const ICON_COLORS = {
     linkedin:  { fg: "#4fb3ff", bg: "rgba(79, 179, 255, 0.14)" },
@@ -68,25 +79,23 @@
     return li;
   }
 
-  function renderAgendaRow(evento, delay) {
+  function renderAgendaRow(evento, delay, inscreverSeLabel) {
     const li = document.createElement("li");
     const card = document.createElement("div");
     card.className = "agenda-card";
     card.style.transitionDelay = delay + "s";
     card.innerHTML = `
-      <span class="agenda-date">
-        <span class="dia">${evento.dia}</span>
-        <span class="mes">${evento.mes}</span>
-      </span>
-      <span class="agenda-body">
+      <span class="agenda-top">
+        <span class="agenda-date-inline">${evento.dia} ${evento.mes}</span>
+        <span class="agenda-sep">|</span>
         <span class="tema">${evento.tema}</span>
-        <span class="agenda-meta">
-          <span class="local">${evento.local}</span>
-          ${evento.horario ? `<span class="agenda-hora">${evento.horario}</span>` : ""}
-          <span class="agenda-format">${evento.formato || "Online"}</span>
-        </span>
       </span>
-      <a class="agenda-btn" href="${evento.url}" target="_blank" rel="noopener noreferrer">Inscrever-se</a>
+      <span class="agenda-meta">
+        <span class="local">${evento.local}</span>
+        ${evento.horario ? `<span class="agenda-hora">${evento.horario}</span>` : ""}
+        <span class="agenda-format">${evento.formato || "Online"}</span>
+      </span>
+      <a class="agenda-btn-full" href="${evento.url}" target="_blank" rel="noopener noreferrer">${inscreverSeLabel}</a>
     `;
     li.appendChild(card);
     return li;
@@ -100,8 +109,19 @@
     });
   }
 
+  // Limpa os containers dinâmicos antes de re-renderizar (troca de idioma)
+  function clearContainers() {
+    ["#hero-roles", "#social-row", "#grupo1-lista", "#agenda-lista", "#brand-track", "#grupo2-lista"]
+      .forEach((sel) => { const el = $(sel); if (el) el.innerHTML = ""; });
+  }
+
   function render() {
-    const d = SITE_DATA;
+    const d = SITE_DATA[currentLang];
+    clearContainers();
+
+    // <html lang="..."> e direção do texto (árabe é RTL)
+    document.documentElement.lang = currentLang;
+    document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
 
     // Painel 1 — Gabriel Bussinger
     $("#hero-avatar").src = d.hero.avatar;
@@ -131,13 +151,14 @@
     // Agenda
     $("#agenda-titulo").textContent = d.agenda.titulo;
     const agendaHost = $("#agenda-lista");
-    d.agenda.eventos.forEach((ev, i) => agendaHost.appendChild(renderAgendaRow(ev, i * 0.06)));
+    d.agenda.eventos.forEach((ev, i) => agendaHost.appendChild(renderAgendaRow(ev, i * 0.06, d.ui.inscreverSe)));
 
     // Painel 2 — Diário do Treinador
+    $("#diario-eyebrow").textContent = d.ui.eyebrow;
     $("#grupo2-titulo").textContent = d.grupo2.titulo;
     $("#grupo2-slogan").textContent = d.grupo2.slogan;
 
-    // Faixa de marcas (carrossel contínuo) — usa as palavras que eram das caixas flutuantes
+    // Faixa de marcas (carrossel contínuo)
     const track = $("#brand-track");
     const checkDotSvg = `<span class="check-dot"><svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="8.5"/><path class="tick" d="M6 10.3l2.6 2.6L14.2 7"/></svg></span>`;
     const buildBrandSet = () =>
@@ -162,7 +183,7 @@
     const devEl = $("#footer-dev");
     devEl.innerHTML = `${d.footer.devLabel} | <a href="${devHref}" target="_blank" rel="noopener noreferrer">${d.footer.devNome}</a>`;
 
-    // Efeito de entrada ao rolar a página (mais dinâmico do que animar tudo de uma vez)
+    // Efeito de entrada ao rolar a página
     const revealTargets = document.querySelectorAll(".link-card, .agenda-card");
     if ("IntersectionObserver" in window) {
       const observer = new IntersectionObserver(
@@ -182,5 +203,57 @@
     }
   }
 
-  document.addEventListener("DOMContentLoaded", render);
+  // ------------------ Seletor de idiomas ------------------
+  function renderLangSwitcher() {
+    const wrap = $("#lang-switcher");
+    if (!wrap) return;
+
+    const current = LANGS.find((l) => l.code === currentLang);
+    wrap.innerHTML = `
+      <button type="button" class="lang-btn" id="lang-toggle" aria-haspopup="true" aria-expanded="false">
+        <span class="lang-flag">${current.flag}</span>
+        <svg class="lang-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <ul class="lang-menu" id="lang-menu" role="menu">
+        ${LANGS.map((l) => `
+          <li>
+            <button type="button" class="lang-option${l.code === currentLang ? " is-active" : ""}" data-lang="${l.code}" role="menuitem">
+              <span class="lang-flag">${l.flag}</span>
+              <span>${l.label}</span>
+            </button>
+          </li>
+        `).join("")}
+      </ul>
+    `;
+
+    const toggleBtn = $("#lang-toggle");
+    const menu = $("#lang-menu");
+
+    toggleBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isOpen = wrap.classList.toggle("is-open");
+      toggleBtn.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    menu.querySelectorAll(".lang-option").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const lang = btn.getAttribute("data-lang");
+        if (lang === currentLang) { wrap.classList.remove("is-open"); return; }
+        currentLang = lang;
+        localStorage.setItem("dt_lang", lang);
+        render();
+        renderLangSwitcher();
+        wrap.classList.remove("is-open");
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!wrap.contains(e.target)) wrap.classList.remove("is-open");
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    render();
+    renderLangSwitcher();
+  });
 })();
