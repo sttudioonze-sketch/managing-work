@@ -51,7 +51,7 @@ const SITE_DATA = {
           icone: "linkedin"
         },
         {
-          titulo: 'Contato para <span class="accent-word">Cursos e Palestras</span>',
+          titulo: '<span class="accent-word">Palestras</span> e Eventos',
           descricao: "Fale direto com o Gabriel",
           url: "mailto:gabrieltreinador33@gmail.com",
           icone: "mail"
@@ -66,6 +66,7 @@ const SITE_DATA = {
           mes: "SET",
           tema: "Metodologia Centrada no Atleta",
           local: "Federação Gaúcha de Futebol",
+          cidadePais: "Porto Alegre, Brasil", // opcional — útil sobretudo para eventos no exterior
           horario: "19:00",
           formato: "Físico",
           url: "https://SUBSTITUA-LINK-DE-INSCRICAO"
@@ -115,7 +116,7 @@ const SITE_DATA = {
           ]
         },
         {
-          titulo: 'Meu canal no <span class="accent-word">Youtube</span>',
+          titulo: '<span class="accent-word">Canal</span> do Youtube',
           descricao: "Palestras, Podcasts e conteúdos aprofundados, para profissionais do futebol",
           url: "https://www.youtube.com/@gabrielbussinger3386",
           icone: "youtube"
@@ -168,7 +169,7 @@ const SITE_DATA = {
           icone: "linkedin"
         },
         {
-          titulo: 'Contact for <span class="accent-word">Courses & Speaking</span>',
+          titulo: '<span class="accent-word">Talks</span> & Events',
           descricao: "Get in touch with Gabriel directly",
           url: "mailto:gabrieltreinador33@gmail.com",
           icone: "mail"
@@ -232,7 +233,7 @@ const SITE_DATA = {
           ]
         },
         {
-          titulo: 'My <span class="accent-word">YouTube</span> channel',
+          titulo: '<span class="accent-word">YouTube</span> Channel',
           descricao: "Talks, podcasts and in-depth content for football professionals",
           url: "https://www.youtube.com/@gabrielbussinger3386",
           icone: "youtube"
@@ -285,7 +286,7 @@ const SITE_DATA = {
           icone: "linkedin"
         },
         {
-          titulo: 'Contacto para <span class="accent-word">Cursos y Conferencias</span>',
+          titulo: '<span class="accent-word">Charlas</span> y Eventos',
           descricao: "Habla directo con Gabriel",
           url: "mailto:gabrieltreinador33@gmail.com",
           icone: "mail"
@@ -349,7 +350,7 @@ const SITE_DATA = {
           ]
         },
         {
-          titulo: 'Mi canal de <span class="accent-word">YouTube</span>',
+          titulo: '<span class="accent-word">Canal</span> de YouTube',
           descricao: "Charlas, podcasts y contenidos a profundidad, para profesionales del fútbol",
           url: "https://www.youtube.com/@gabrielbussinger3386",
           icone: "youtube"
@@ -402,7 +403,7 @@ const SITE_DATA = {
           icone: "linkedin"
         },
         {
-          titulo: 'تواصل من أجل <span class="accent-word">الدورات والمحاضرات</span>',
+          titulo: '<span class="accent-word">محاضرات</span> وفعاليات',
           descricao: "تواصل مباشرة مع غابرييل",
           url: "mailto:gabrieltreinador33@gmail.com",
           icone: "mail"
@@ -466,7 +467,7 @@ const SITE_DATA = {
           ]
         },
         {
-          titulo: 'قناتي على <span class="accent-word">يوتيوب</span>',
+          titulo: '<span class="accent-word">قناة</span> يوتيوب',
           descricao: "محاضرات وبودكاست ومحتوى معمّق لمحترفي كرة القدم",
           url: "https://www.youtube.com/@gabrielbussinger3386",
           icone: "youtube"

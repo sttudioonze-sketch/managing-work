@@ -95,6 +95,7 @@
         ${evento.horario ? `<span class="agenda-hora">${evento.horario}</span>` : ""}
         <span class="agenda-format">${evento.formato || "Online"}</span>
       </span>
+      ${evento.cidadePais ? `<span class="agenda-cidade">${ICONS.pin || ""}${evento.cidadePais}</span>` : ""}
       <a class="agenda-btn-full" href="${evento.url}" target="_blank" rel="noopener noreferrer">${inscreverSeLabel}</a>
     `;
     li.appendChild(card);
@@ -149,7 +150,6 @@
     d.grupo1.links.forEach((link, i) => g1.appendChild(renderLinkRow(link, i * 0.06)));
 
     // Agenda
-    $("#agenda-titulo").textContent = d.agenda.titulo;
     const agendaHost = $("#agenda-lista");
     d.agenda.eventos.forEach((ev, i) => agendaHost.appendChild(renderAgendaRow(ev, i * 0.06, d.ui.inscreverSe)));
 
