@@ -123,7 +123,7 @@ const SITE_DATA = {
         subtitulo: "Conheça, aplique e transforme",
         descricao: "Desenvolvimento Profissional e Pessoal para Treinadores e profissionais do futebol",
         cta: "Inscreva-se!",
-        url: "https://SUBSTITUA-LINK-DA-LANDING-PAGE-MENTORIA",
+        url: "https://pay.hotmart.com/I103504037F?off=nhfhufix",
         icone: "target",
         featured: true
       },
@@ -132,7 +132,7 @@ const SITE_DATA = {
         badge: "Cursos on-line",
         subtitulo: "Com Gabriel Bussinger",
         descricao: "Acesse os insights de grandes mentes da literatura mundial e aplique ao futebol",
-        url: "https://SUBSTITUA-LINK-DA-LANDING-PAGE-CURSO",
+        url: "https://pay.hotmart.com/W104537174A?checkoutMode=10&bid=1787765134118",
         icone: "play",
         featured: true,
         // Livros usados no curso — título + autor, rolando na parte inferior do botão.
