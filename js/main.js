@@ -86,16 +86,21 @@
     card.style.transitionDelay = delay + "s";
     card.innerHTML = `
       <span class="agenda-top">
-        <span class="agenda-date-inline">${evento.dia} ${evento.mes}</span>
-        <span class="agenda-sep">|</span>
-        <span class="tema">${evento.tema}</span>
+        <span class="agenda-date">
+          <span class="dia">${evento.dia}</span>
+          <span class="mes">${evento.mes}</span>
+        </span>
+        <span class="agenda-info">
+          <span class="agenda-meta">
+            <span class="local">${evento.local}</span>
+            <span class="agenda-sep">|</span>
+            ${evento.horario ? `<span class="agenda-hora">${evento.horario}</span><span class="agenda-sep">|</span>` : ""}
+            <span class="agenda-format">${evento.formato || "Online"}</span>
+          </span>
+          <span class="tema">${evento.tema}</span>
+          ${evento.cidadePais ? `<span class="agenda-cidade">${ICONS.pin || ""}${evento.cidadePais}</span>` : ""}
+        </span>
       </span>
-      <span class="agenda-meta">
-        <span class="local">${evento.local}</span>
-        ${evento.horario ? `<span class="agenda-hora">${evento.horario}</span>` : ""}
-        <span class="agenda-format">${evento.formato || "Online"}</span>
-      </span>
-      ${evento.cidadePais ? `<span class="agenda-cidade">${ICONS.pin || ""}${evento.cidadePais}</span>` : ""}
       <a class="agenda-btn-full" href="${evento.url}" target="_blank" rel="noopener noreferrer">${inscreverSeLabel}</a>
     `;
     li.appendChild(card);
