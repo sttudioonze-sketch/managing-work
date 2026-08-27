@@ -317,10 +317,11 @@ button { font: inherit; }
 .role-line:last-child { margin-bottom: 0; }
 .role-line.is-primary {
   color: var(--support);
-  font-size: 17px;
-  font-weight: 500;
+  font-size: clamp(13px, 3.6vw, 17px);
+  font-weight: 600;
   line-height: 1.4;
   margin-bottom: 7px;
+  white-space: nowrap;
 }
 .role-line .sep {
   color: var(--accent);
@@ -340,7 +341,9 @@ button { font: inherit; }
 .cred-badge {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 7px;
+  min-width: 132px;
   padding: 5px 12px 5px 8px;
   border-radius: 999px;
   background: rgba(20, 255, 227, 0.05);
@@ -526,59 +529,30 @@ button { font: inherit; }
 /* ==========================================================================
    Agenda de próximos eventos
    ========================================================================== */
-.agenda-heading {
-  margin: 18px 0 12px;
-  padding-top: 18px;
-  border-top: 1px solid var(--border);
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-.agenda-heading:first-child {
-  margin-top: 0;
-  padding-top: 0;
-  border-top: none;
-}
-.agenda-list {
+.agenda-list-flat {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
 }
-.agenda-card {
+.agenda-row {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   gap: 14px;
-  padding: 18px 18px;
-  border-radius: var(--radius);
-  background: var(--glass);
-  border: 1px solid var(--border);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  text-align: left;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
   opacity: 0;
-  transform: translateY(22px) scale(0.98);
+  transform: translateY(16px);
   transition:
     opacity 0.65s var(--ease),
-    transform 0.65s var(--ease),
-    background 0.35s var(--ease),
-    border-color 0.35s var(--ease);
+    transform 0.65s var(--ease);
 }
-.agenda-card.is-visible {
+.agenda-list-flat li:first-child .agenda-row { padding-top: 0; }
+.agenda-list-flat li:last-child .agenda-row { padding-bottom: 0; border-bottom: none; }
+.agenda-row.is-visible {
   opacity: 1;
-  transform: translateY(0) scale(1);
-}
-.agenda-card:hover {
-  background: var(--glass-hover);
-  border-color: var(--accent-line);
-  transform: translateY(-2px);
+  transform: translateY(0);
 }
 .agenda-top {
   display: flex;
@@ -1111,8 +1085,20 @@ button { font: inherit; }
   text-align: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 4px;
 }
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 0 8px;
+}
+.footer-social .social-btn {
+  width: 34px;
+  height: 34px;
+}
+.footer-social .social-btn svg { width: 16px; height: 16px; }
 .site-footer strong {
   font-family: var(--font-body);
   font-weight: 700;
@@ -1129,6 +1115,32 @@ button { font: inherit; }
   transition: opacity 0.25s var(--ease);
 }
 .site-footer a:hover { opacity: 0.75; }
+
+/* Topo da Página 2 — botão voltar + seletor de idioma */
+.page2-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto 26px;
+}
+.page2-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px 8px 10px;
+  border-radius: 999px;
+  background: rgba(245, 245, 245, 0.05);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  transition: border-color 0.25s var(--ease), color 0.25s var(--ease);
+}
+.page2-back svg { width: 16px; height: 16px; }
+.page2-back:hover { border-color: var(--accent-line); color: var(--support); }
 
 /* ==========================================================================
    Responsivo

@@ -10,6 +10,12 @@
  *  Links, e-mails e telefones são os MESMOS em todos os idiomas —
  *  só o texto muda. Se editar um link, edite em todos os 4 blocos.
  *
+ *  Estrutura da Página 1 (index.html):
+ *    hero → grupo1 (Newsletter + Podcast) → agenda → contato →
+ *    ecosystem (card que leva pra Página 2) → footer
+ *  Estrutura da Página 2 (diario-do-treinador.html):
+ *    grupo2 (WhatsApp, Mentoria, Best Sellers, Youtube, Suporte)
+ *
  *  ⚠️ As traduções de inglês e espanhol foram feitas automaticamente
  *  e devem ser revisadas. A tradução em árabe É ESPECIALMENTE
  *  recomendável revisar com um falante nativo antes de divulgar,
@@ -18,6 +24,7 @@
  */
 
 const SUPORTE_URL = "https://wa.me/5551991736138";
+const PORTFOLIO_URL = SUPORTE_URL; // Portfólio PRO usa o mesmo link do Sttudio11WD
 
 const SITE_DATA = {
 
@@ -25,13 +32,19 @@ const SITE_DATA = {
   // PORTUGUÊS (padrão)
   // ================================================================
   pt: {
-    ui: { eyebrow: "Ecossistema", inscreverSe: "Inscrever-se", agendaHeading: "Palestras, Cursos e Eventos" },
+    ui: {
+      eyebrow: "Ecossistema",
+      inscreverSe: "Inscrever-se",
+      agendaTitulo: "Agenda",
+      agendaHeading: "Palestras, Cursos e Eventos",
+      footerFeitoPor: "Feito por",
+      footerPortfolio: "Portfólio PRO"
+    },
     hero: {
       avatar: "images/avatar.png",
       nome: "Gabriel Bussinger",
       roleLines: [
-        "Coordenador Técnico Geral no Vasco da Gama SAF",
-        "Mentor de Profissionais do Futebol | Idealizador do Podcast Diário do Treinador"
+        "Coordenador Técnico Geral no Vasco da Gama SAF"
       ],
       badges: [
         { label: "Instrutor", org: "CONMEBOL" },
@@ -45,7 +58,6 @@ const SITE_DATA = {
       { icone: "mail", url: "mailto:gabrieltreinador33@gmail.com" }
     ],
     grupo1: {
-      titulo: "Gabriel Bussinger",
       links: [
         {
           titulo: 'Assinar <span class="accent-word">Newsletter</span>',
@@ -54,15 +66,14 @@ const SITE_DATA = {
           icone: "linkedin"
         },
         {
-          titulo: '<span class="accent-word">Palestras</span> e Eventos',
-          descricao: "Fale direto com o Gabriel",
-          url: "mailto:gabrieltreinador33@gmail.com",
-          icone: "mail"
+          titulo: '<span class="accent-word">Podcast</span> Diário do Treinador',
+          descricao: "Salve salve amantes do futebol! Esse é um Podcast sobre reflexões de um treinador e sua prática, confira!",
+          url: "https://open.spotify.com/show/1mE62qrGMhtvwLj2batf2o",
+          icone: "spotify"
         }
       ]
     },
     agenda: {
-      titulo: "Próximos Eventos",
       eventos: [
         {
           dia: "07",
@@ -76,17 +87,26 @@ const SITE_DATA = {
         }
       ]
     },
+    contato: {
+      titulo: '<span class="accent-word">Palestras</span> e Eventos',
+      descricao: "Entre em contato e verifique a disponibilidade de agenda",
+      url: "mailto:gabrieltreinador33@gmail.com",
+      icone: "mail"
+    },
+    ecosystem: {
+      titulo: '<span class="accent-word">Ecossistema</span> Diário do Treinador',
+      subtitulo: "Conheça, aplique e transforme",
+      descricao: "Um ecossistema completo para educação, evolução e desenvolvimento integral de treinadores e profissionais do futebol",
+      url: "diario-do-treinador.html",
+      icone: "books",
+      featured: true,
+      internal: true
+    },
     grupo2: {
       titulo: "Diário do Treinador",
       slogan: "Formando e Desenvolvendo Integralmente Profissionais que trabalham no Futebol",
       marquee: ["Mindset", "Desenvolvimento Profissional", "Desenvolvimento Pessoal", "Leitura", "Network", "Autoconhecimento"],
       itens: [
-        {
-          titulo: '<span class="accent-word">Podcast</span> Diário do Treinador',
-          descricao: "Salve salve amantes do futebol! Esse é um Podcast sobre reflexões de um treinador e sua prática, confira!",
-          url: "https://open.spotify.com/show/1mE62qrGMhtvwLj2batf2o",
-          icone: "spotify"
-        },
         {
           titulo: 'Grupo Aberto no <span class="accent-word">WhatsApp</span>',
           descricao: "Comunidade do Diário do Treinador",
@@ -134,10 +154,12 @@ const SITE_DATA = {
     footer: {
       nome: "Gabriel Bussinger",
       ecossistema: "Ecossistema Diário do Treinador",
-      devLabel: "Desenvolvimento",
+      devLabel: "Feito por",
       devNome: "Sttudio11WD",
       devUrl: SUPORTE_URL,
-      devMensagem: "Olá Luis, gostaria de saber sobre seus serviços"
+      devMensagem: "Olá Luis, gostaria de saber sobre seus serviços",
+      portfolioLabel: "Portfólio PRO",
+      portfolioUrl: PORTFOLIO_URL
     }
   },
 
@@ -145,13 +167,19 @@ const SITE_DATA = {
   // ENGLISH
   // ================================================================
   en: {
-    ui: { eyebrow: "Ecosystem", inscreverSe: "Sign up", agendaHeading: "Talks, Courses & Events" },
+    ui: {
+      eyebrow: "Ecosystem",
+      inscreverSe: "Sign up",
+      agendaTitulo: "Agenda",
+      agendaHeading: "Talks, Courses & Events",
+      footerFeitoPor: "Built by",
+      footerPortfolio: "PRO Portfolio"
+    },
     hero: {
       avatar: "images/avatar.png",
       nome: "Gabriel Bussinger",
       roleLines: [
-        "General Technical Coordinator at Vasco da Gama SAF",
-        "Mentor for Football Professionals | Creator of the Coach's Diary Podcast"
+        "General Technical Coordinator at Vasco da Gama SAF"
       ],
       badges: [
         { label: "Instructor", org: "CONMEBOL" },
@@ -165,7 +193,6 @@ const SITE_DATA = {
       { icone: "mail", url: "mailto:gabrieltreinador33@gmail.com" }
     ],
     grupo1: {
-      titulo: "Gabriel Bussinger",
       links: [
         {
           titulo: 'Subscribe to my <span class="accent-word">Newsletter</span>',
@@ -174,38 +201,47 @@ const SITE_DATA = {
           icone: "linkedin"
         },
         {
-          titulo: '<span class="accent-word">Talks</span> & Events',
-          descricao: "Get in touch with Gabriel directly",
-          url: "mailto:gabrieltreinador33@gmail.com",
-          icone: "mail"
+          titulo: `<span class="accent-word">Podcast</span> — Coach's Diary`,
+          descricao: "Hey football lovers! This is a podcast with a coach's reflections on the job — check it out!",
+          url: "https://open.spotify.com/show/1mE62qrGMhtvwLj2batf2o",
+          icone: "spotify"
         }
       ]
     },
     agenda: {
-      titulo: "Upcoming Events",
       eventos: [
         {
           dia: "07",
           mes: "SEP",
           tema: "Athlete-Centered Methodology",
           local: "Rio Grande do Sul Football Federation",
+          cidadePais: "Porto Alegre, Brazil",
           horario: "19:00",
           formato: "In-person",
           url: "https://SUBSTITUA-LINK-DE-INSCRICAO"
         }
       ]
     },
+    contato: {
+      titulo: '<span class="accent-word">Talks</span> & Events',
+      descricao: "Get in touch and check my availability",
+      url: "mailto:gabrieltreinador33@gmail.com",
+      icone: "mail"
+    },
+    ecosystem: {
+      titulo: `<span class="accent-word">Ecosystem</span> — Coach's Diary`,
+      subtitulo: "Learn it, apply it, transform",
+      descricao: "A complete ecosystem for the education, growth, and full development of coaches and football professionals",
+      url: "diario-do-treinador.html",
+      icone: "books",
+      featured: true,
+      internal: true
+    },
     grupo2: {
       titulo: "Coach's Diary",
       slogan: "Fully training and developing professionals who work in football",
       marquee: ["Mindset", "Professional Development", "Personal Development", "Reading", "Network", "Self-Knowledge"],
       itens: [
-        {
-          titulo: `<span class="accent-word">Podcast</span> — Coach's Diary`,
-          descricao: "Hey football lovers! This is a podcast with a coach's reflections on the job — check it out!",
-          url: "https://open.spotify.com/show/1mE62qrGMhtvwLj2batf2o",
-          icone: "spotify"
-        },
         {
           titulo: 'Open <span class="accent-word">WhatsApp</span> Group',
           descricao: "Coach's Diary community",
@@ -256,7 +292,9 @@ const SITE_DATA = {
       devLabel: "Built by",
       devNome: "Sttudio11WD",
       devUrl: SUPORTE_URL,
-      devMensagem: "Hi Luis, I'd like to know more about your services"
+      devMensagem: "Hi Luis, I'd like to know more about your services",
+      portfolioLabel: "PRO Portfolio",
+      portfolioUrl: PORTFOLIO_URL
     }
   },
 
@@ -264,13 +302,19 @@ const SITE_DATA = {
   // ESPAÑOL
   // ================================================================
   es: {
-    ui: { eyebrow: "Ecosistema", inscreverSe: "Inscribirse", agendaHeading: "Charlas, Cursos y Eventos" },
+    ui: {
+      eyebrow: "Ecosistema",
+      inscreverSe: "Inscribirse",
+      agendaTitulo: "Agenda",
+      agendaHeading: "Charlas, Cursos y Eventos",
+      footerFeitoPor: "Desarrollado por",
+      footerPortfolio: "Portafolio PRO"
+    },
     hero: {
       avatar: "images/avatar.png",
       nome: "Gabriel Bussinger",
       roleLines: [
-        "Coordinador Técnico General en Vasco da Gama SAF",
-        "Mentor de Profesionales del Fútbol | Creador del Podcast Diario del Entrenador"
+        "Coordinador Técnico General en Vasco da Gama SAF"
       ],
       badges: [
         { label: "Instructor", org: "CONMEBOL" },
@@ -284,7 +328,6 @@ const SITE_DATA = {
       { icone: "mail", url: "mailto:gabrieltreinador33@gmail.com" }
     ],
     grupo1: {
-      titulo: "Gabriel Bussinger",
       links: [
         {
           titulo: 'Suscribirme al <span class="accent-word">Newsletter</span>',
@@ -293,38 +336,47 @@ const SITE_DATA = {
           icone: "linkedin"
         },
         {
-          titulo: '<span class="accent-word">Charlas</span> y Eventos',
-          descricao: "Habla directo con Gabriel",
-          url: "mailto:gabrieltreinador33@gmail.com",
-          icone: "mail"
+          titulo: '<span class="accent-word">Podcast</span> Diario del Entrenador',
+          descricao: "¡Hola, amantes del fútbol! Este es un podcast sobre las reflexiones de un entrenador y su práctica, ¡échale un vistazo!",
+          url: "https://open.spotify.com/show/1mE62qrGMhtvwLj2batf2o",
+          icone: "spotify"
         }
       ]
     },
     agenda: {
-      titulo: "Próximos Eventos",
       eventos: [
         {
           dia: "07",
           mes: "SEP",
           tema: "Metodología Centrada en el Atleta",
           local: "Federación Gaúcha de Fútbol",
+          cidadePais: "Porto Alegre, Brasil",
           horario: "19:00",
           formato: "Presencial",
           url: "https://SUBSTITUA-LINK-DE-INSCRICAO"
         }
       ]
     },
+    contato: {
+      titulo: '<span class="accent-word">Charlas</span> y Eventos',
+      descricao: "Contáctame y consulta la disponibilidad de agenda",
+      url: "mailto:gabrieltreinador33@gmail.com",
+      icone: "mail"
+    },
+    ecosystem: {
+      titulo: '<span class="accent-word">Ecosistema</span> Diario del Entrenador',
+      subtitulo: "Conoce, aplica, transforma",
+      descricao: "Un ecosistema completo para la educación, evolución y desarrollo integral de entrenadores y profesionales del fútbol",
+      url: "diario-do-treinador.html",
+      icone: "books",
+      featured: true,
+      internal: true
+    },
     grupo2: {
       titulo: "Diario del Entrenador",
       slogan: "Formando y desarrollando integralmente a los profesionales que trabajan en el fútbol",
       marquee: ["Mentalidad", "Desarrollo Profesional", "Desarrollo Personal", "Lectura", "Red de Contactos", "Autoconocimiento"],
       itens: [
-        {
-          titulo: '<span class="accent-word">Podcast</span> Diario del Entrenador',
-          descricao: "¡Hola, amantes del fútbol! Este es un podcast sobre las reflexiones de un entrenador y su práctica, ¡échale un vistazo!",
-          url: "https://open.spotify.com/show/1mE62qrGMhtvwLj2batf2o",
-          icone: "spotify"
-        },
         {
           titulo: 'Grupo Abierto de <span class="accent-word">WhatsApp</span>',
           descricao: "Comunidad del Diario del Entrenador",
@@ -375,7 +427,9 @@ const SITE_DATA = {
       devLabel: "Desarrollado por",
       devNome: "Sttudio11WD",
       devUrl: SUPORTE_URL,
-      devMensagem: "Hola Luis, me gustaría saber sobre tus servicios"
+      devMensagem: "Hola Luis, me gustaría saber sobre tus servicios",
+      portfolioLabel: "Portafolio PRO",
+      portfolioUrl: PORTFOLIO_URL
     }
   },
 
@@ -383,13 +437,19 @@ const SITE_DATA = {
   // العربية (ARABIC) — ⚠️ revisar com falante nativo antes de publicar
   // ================================================================
   ar: {
-    ui: { eyebrow: "منظومة", inscreverSe: "سجّل الآن", agendaHeading: "محاضرات ودورات وفعاليات" },
+    ui: {
+      eyebrow: "منظومة",
+      inscreverSe: "سجّل الآن",
+      agendaTitulo: "الأجندة",
+      agendaHeading: "محاضرات ودورات وفعاليات",
+      footerFeitoPor: "تطوير",
+      footerPortfolio: "معرض الأعمال PRO"
+    },
     hero: {
       avatar: "images/avatar.png",
       nome: "غابرييل بوسينجر",
       roleLines: [
-        "المنسق الفني العام في فاسكو دا جاما SAF",
-        "موجّه لمحترفي كرة القدم | مؤسس بودكاست يوميات المدرب"
+        "المنسق الفني العام في فاسكو دا جاما SAF"
       ],
       badges: [
         { label: "مدرب", org: "CONMEBOL" },
@@ -403,7 +463,6 @@ const SITE_DATA = {
       { icone: "mail", url: "mailto:gabrieltreinador33@gmail.com" }
     ],
     grupo1: {
-      titulo: "غابرييل بوسينجر",
       links: [
         {
           titulo: 'اشترك في <span class="accent-word">النشرة الإخبارية</span>',
@@ -412,38 +471,47 @@ const SITE_DATA = {
           icone: "linkedin"
         },
         {
-          titulo: '<span class="accent-word">محاضرات</span> وفعاليات',
-          descricao: "تواصل مباشرة مع غابرييل",
-          url: "mailto:gabrieltreinador33@gmail.com",
-          icone: "mail"
+          titulo: '<span class="accent-word">بودكاست</span> يوميات المدرب',
+          descricao: "أهلاً بمحبي كرة القدم! هذا بودكاست حول تأملات مدرب وممارسته المهنية، استمع إليه!",
+          url: "https://open.spotify.com/show/1mE62qrGMhtvwLj2batf2o",
+          icone: "spotify"
         }
       ]
     },
     agenda: {
-      titulo: "الفعاليات القادمة",
       eventos: [
         {
           dia: "07",
           mes: "سبتمبر",
           tema: "منهجية محورها الرياضي",
           local: "اتحاد كرة القدم لولاية ريو غراندي دو سول",
+          cidadePais: "بورتو أليغري، البرازيل",
           horario: "19:00",
           formato: "حضوري",
           url: "https://SUBSTITUA-LINK-DE-INSCRICAO"
         }
       ]
     },
+    contato: {
+      titulo: '<span class="accent-word">محاضرات</span> وفعاليات',
+      descricao: "تواصل معي واستفسر عن مواعيد الأجندة",
+      url: "mailto:gabrieltreinador33@gmail.com",
+      icone: "mail"
+    },
+    ecosystem: {
+      titulo: '<span class="accent-word">منظومة</span> يوميات المدرب',
+      subtitulo: "تعرّف، طبّق، تحوّل",
+      descricao: "منظومة متكاملة لتعليم وتطوير مدربي ومحترفي كرة القدم بشكل شامل",
+      url: "diario-do-treinador.html",
+      icone: "books",
+      featured: true,
+      internal: true
+    },
     grupo2: {
       titulo: "يوميات المدرب",
       slogan: "تكوين وتطوير شامل للمحترفين العاملين في كرة القدم",
       marquee: ["العقلية", "التطور المهني", "التطور الشخصي", "القراءة", "شبكة العلاقات", "معرفة الذات"],
       itens: [
-        {
-          titulo: '<span class="accent-word">بودكاست</span> يوميات المدرب',
-          descricao: "أهلاً بمحبي كرة القدم! هذا بودكاست حول تأملات مدرب وممارسته المهنية، استمع إليه!",
-          url: "https://open.spotify.com/show/1mE62qrGMhtvwLj2batf2o",
-          icone: "spotify"
-        },
         {
           titulo: 'مجموعة <span class="accent-word">واتساب</span> مفتوحة',
           descricao: "مجتمع يوميات المدرب",
@@ -494,7 +562,9 @@ const SITE_DATA = {
       devLabel: "تطوير",
       devNome: "Sttudio11WD",
       devUrl: SUPORTE_URL,
-      devMensagem: "مرحباً لويس، أود معرفة المزيد عن خدماتك"
+      devMensagem: "مرحباً لويس، أود معرفة المزيد عن خدماتك",
+      portfolioLabel: "معرض الأعمال PRO",
+      portfolioUrl: PORTFOLIO_URL
     }
   }
 };

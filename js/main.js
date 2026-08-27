@@ -121,7 +121,7 @@
     const a = document.createElement("a");
     a.className = "link-card" + (link.featured ? " is-featured" : "");
     a.href = link.url;
-    a.target = link.url.startsWith("mailto:") ? "_self" : "_blank";
+    a.target = (link.url.startsWith("mailto:") || link.internal) ? "_self" : "_blank";
     a.rel = "noopener noreferrer";
     a.style.transitionDelay = delay + "s";
 
@@ -173,7 +173,7 @@
   function renderAgendaRow(evento, delay, inscreverSeLabel) {
     const li = document.createElement("li");
     const card = document.createElement("div");
-    card.className = "agenda-card";
+    card.className = "agenda-row";
     card.style.transitionDelay = delay + "s";
     card.innerHTML = `
       <span class="agenda-top">
@@ -208,8 +208,24 @@
 
   // Limpa os containers dinâmicos antes de re-renderizar (troca de idioma)
   function clearContainers() {
-    ["#hero-roles", "#social-row", "#grupo1-lista", "#agenda-lista", "#brand-track", "#grupo2-lista"]
+    ["#hero-roles", "#social-row", "#grupo1-lista", "#agenda-lista", "#brand-track",
+     "#grupo2-lista", "#grupo3-lista", "#grupo4-lista", "#footer-social"]
       .forEach((sel) => { const el = $(sel); if (el) el.innerHTML = ""; });
+  }
+
+  const BACK_LABELS = { pt: "Voltar", en: "Back", es: "Volver", ar: "رجوع" };
+
+  function renderSocialRow(host, items) {
+    if (!host) return;
+    (items || []).forEach((item) => {
+      const a = document.createElement("a");
+      a.className = "social-btn";
+      a.href = item.url;
+      a.target = item.url.startsWith("mailto:") ? "_self" : "_blank";
+      a.rel = "noopener noreferrer";
+      a.innerHTML = iconSvg(item.icone);
+      host.appendChild(a);
+    });
   }
 
   function render() {
@@ -220,66 +236,80 @@
     document.documentElement.lang = currentLang;
     document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
 
-    // Painel 1 — Gabriel Bussinger
-    $("#hero-avatar").src = d.hero.avatar;
-    $("#hero-nome").textContent = d.hero.nome;
+    // ---------- PÁGINA 1: Hero (Gabriel Bussinger) ----------
+    const heroAvatar = $("#hero-avatar");
+    if (heroAvatar) {
+      heroAvatar.src = d.hero.avatar;
+      $("#hero-nome").textContent = d.hero.nome;
 
-    const rolesHost = $("#hero-roles");
-    rolesHost.innerHTML = (d.hero.roleLines || [])
-      .map((line, i) => `<p class="role-line${i === 0 ? " is-primary" : ""}">${line.split("|").map(s => s.trim()).join(' <span class="sep">|</span> ')}</p>`)
-      .join("");
-
-    const badgesHost = $("#cred-badges");
-    if (badgesHost) {
-      badgesHost.innerHTML = (d.hero.badges || [])
-        .map((b) => `
-          <span class="cred-badge">
-            <span class="cred-indicator"><span class="cred-dot"></span></span>
-            ${b.label} <strong>${b.org}</strong>
-          </span>
-        `)
+      const rolesHost = $("#hero-roles");
+      rolesHost.innerHTML = (d.hero.roleLines || [])
+        .map((line, i) => `<p class="role-line${i === 0 ? " is-primary" : ""}">${line.split("|").map(s => s.trim()).join(' <span class="sep">|</span> ')}</p>`)
         .join("");
+
+      const badgesHost = $("#cred-badges");
+      if (badgesHost) {
+        badgesHost.innerHTML = (d.hero.badges || [])
+          .map((b) => `
+            <span class="cred-badge">
+              <span class="cred-indicator"><span class="cred-dot"></span></span>
+              ${b.label} <strong>${b.org}</strong>
+            </span>
+          `)
+          .join("");
+      }
+
+      renderSocialRow($("#social-row"), d.socialRow);
     }
 
-    // Ícones sociais
-    const socialHost = $("#social-row");
-    (d.socialRow || []).forEach((item) => {
-      const a = document.createElement("a");
-      a.className = "social-btn";
-      a.href = item.url;
-      a.target = item.url.startsWith("mailto:") ? "_self" : "_blank";
-      a.rel = "noopener noreferrer";
-      a.innerHTML = iconSvg(item.icone);
-      socialHost.appendChild(a);
-    });
-
-    // Botões principais do Gabriel
+    // ---------- PÁGINA 1: Caixa 1 — Newsletter + Podcast ----------
     const g1 = $("#grupo1-lista");
-    d.grupo1.links.forEach((link, i) => g1.appendChild(renderLinkRow(link, i * 0.06)));
+    if (g1 && d.grupo1) {
+      d.grupo1.links.forEach((link, i) => g1.appendChild(renderLinkRow(link, i * 0.06)));
+    }
 
-    // Agenda
-    $("#agenda-heading").textContent = d.ui.agendaHeading;
+    // ---------- PÁGINA 1: Caixa 2 — Agenda ----------
     const agendaHost = $("#agenda-lista");
-    d.agenda.eventos.forEach((ev, i) => agendaHost.appendChild(renderAgendaRow(ev, i * 0.06, d.ui.inscreverSe)));
+    if (agendaHost && d.agenda) {
+      const agendaTituloEl = $("#agenda-titulo");
+      if (agendaTituloEl) agendaTituloEl.textContent = d.ui.agendaTitulo;
+      const agendaHeadingEl = $("#agenda-heading");
+      if (agendaHeadingEl) agendaHeadingEl.textContent = d.ui.agendaHeading;
+      d.agenda.eventos.forEach((ev, i) => agendaHost.appendChild(renderAgendaRow(ev, i * 0.06, d.ui.inscreverSe)));
+    }
 
-    // Painel 2 — Diário do Treinador
-    $("#diario-eyebrow").textContent = d.ui.eyebrow;
-    $("#grupo2-titulo").textContent = d.grupo2.titulo;
-    $("#grupo2-slogan").textContent = d.grupo2.slogan;
+    // ---------- PÁGINA 1: Caixa 3 — Palestras e Eventos (contato) ----------
+    const g3 = $("#grupo3-lista");
+    if (g3 && d.contato) {
+      g3.appendChild(renderLinkRow(d.contato, 0));
+    }
 
-    // Faixa de marcas (carrossel contínuo)
-    const track = $("#brand-track");
-    const checkDotSvg = `<span class="check-dot"><svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="8.5"/><path class="tick" d="M6 10.3l2.6 2.6L14.2 7"/></svg></span>`;
-    const buildBrandSet = () =>
-      d.grupo2.marquee
-        .map((nome) => `<span class="brand-item">${checkDotSvg}${nome}</span>`)
-        .join("");
-    track.innerHTML = buildBrandSet() + buildBrandSet();
+    // ---------- PÁGINA 1: Caixa 4 — Ecossistema (CTA pra página 2) ----------
+    const g4 = $("#grupo4-lista");
+    if (g4 && d.ecosystem) {
+      g4.appendChild(renderLinkRow(d.ecosystem, 0));
+    }
 
-    const lista2 = $("#grupo2-lista");
-    d.grupo2.itens.forEach((link, i) => lista2.appendChild(renderLinkRow(link, i * 0.06)));
+    // ---------- PÁGINA 2: Ecossistema Diário do Treinador ----------
+    const grupo2Titulo = $("#grupo2-titulo");
+    if (grupo2Titulo && d.grupo2) {
+      $("#diario-eyebrow").textContent = d.ui.eyebrow;
+      grupo2Titulo.textContent = d.grupo2.titulo;
+      $("#grupo2-slogan").textContent = d.grupo2.slogan;
 
-    // Carrossel de marcas (rodapé)
+      const track = $("#brand-track");
+      const checkDotSvg = `<span class="check-dot"><svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="8.5"/><path class="tick" d="M6 10.3l2.6 2.6L14.2 7"/></svg></span>`;
+      const buildBrandSet = () =>
+        d.grupo2.marquee
+          .map((nome) => `<span class="brand-item">${checkDotSvg}${nome}</span>`)
+          .join("");
+      track.innerHTML = buildBrandSet() + buildBrandSet();
+
+      const lista2 = $("#grupo2-lista");
+      d.grupo2.itens.forEach((link, i) => lista2.appendChild(renderLinkRow(link, i * 0.06)));
+    }
+
+    // Carrossel de marcas (rodapé da página 2)
     const brandCarousel = $("#brand-carousel-track");
     if (brandCarousel) {
       const marcas = [
@@ -293,21 +323,29 @@
       brandCarousel.innerHTML = buildImgs() + buildImgs();
     }
 
-    // Footer
-    $("#footer-nome").textContent = d.footer.nome;
-    $("#footer-ecossistema").textContent = d.footer.ecossistema;
+    // Botão "Voltar" (só existe na página 2)
+    const backLabel = $("#page2-back-label");
+    if (backLabel) backLabel.textContent = BACK_LABELS[currentLang] || BACK_LABELS.pt;
 
-    const isWhatsApp = /wa\.me|whatsapp\.com/i.test(d.footer.devUrl);
-    let devHref = d.footer.devUrl;
-    if (isWhatsApp && d.footer.devMensagem) {
-      const sep = devHref.includes("?") ? "&" : "?";
-      devHref += sep + "text=" + encodeURIComponent(d.footer.devMensagem);
+    // ---------- Footer (as duas páginas) ----------
+    const footerNome = $("#footer-nome");
+    if (footerNome) {
+      footerNome.textContent = d.footer.nome;
+      renderSocialRow($("#footer-social"), d.socialRow);
+      $("#footer-ecossistema").textContent = d.footer.ecossistema;
+
+      const isWhatsApp = /wa\.me|whatsapp\.com/i.test(d.footer.devUrl);
+      let devHref = d.footer.devUrl;
+      if (isWhatsApp && d.footer.devMensagem) {
+        const sep = devHref.includes("?") ? "&" : "?";
+        devHref += sep + "text=" + encodeURIComponent(d.footer.devMensagem);
+      }
+      const devEl = $("#footer-dev");
+      devEl.innerHTML = `${d.footer.devLabel} <a href="${devHref}" target="_blank" rel="noopener noreferrer">${d.footer.devNome}</a> | <a href="${d.footer.portfolioUrl}" target="_blank" rel="noopener noreferrer">${d.footer.portfolioLabel}</a>`;
     }
-    const devEl = $("#footer-dev");
-    devEl.innerHTML = `${d.footer.devLabel} | <a href="${devHref}" target="_blank" rel="noopener noreferrer">${d.footer.devNome}</a>`;
 
     // Efeito de entrada ao rolar a página
-    const revealTargets = document.querySelectorAll(".link-card, .agenda-card");
+    const revealTargets = document.querySelectorAll(".link-card, .agenda-row");
     if ("IntersectionObserver" in window) {
       const observer = new IntersectionObserver(
         (entries) => {
