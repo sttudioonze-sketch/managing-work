@@ -65,12 +65,12 @@ const SITE_DATA = {
   agenda: {
     titulo: "Próximos Eventos",
     eventos: [
-      {
-        dia: "15",
+           {
+        dia: "07",
         mes: "SET",
-        tema: "[Substitua pelo tema do evento]",
-        local: "[Substitua pelo local]",
-        formato: "Online", // "Online" ou "Físico"
+        tema: "Palestra na FGF",
+        local: "Porto Alegre - FGF",
+        formato: "Online",
         url: "https://SUBSTITUA-LINK-DE-INSCRICAO"
       },
       {
