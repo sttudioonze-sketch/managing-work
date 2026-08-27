@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gabriel Bussinger | Diário do Treinador</title>
+<meta name="description" content="Gabriel Bussinger — Coordenador Técnico Geral, instrutor CONMEBOL/CBF e idealizador do Ecossistema Diário do Treinador. Mentoria, cursos e conteúdos para treinadores de futebol." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Carlito:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="flow-bg" aria-hidden="true">
+    <svg class="pitch-svg" viewBox="0 0 800 1200" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <rect x="60" y="40" width="680" height="1120" rx="4" fill="none" stroke="currentColor" stroke-width="3.2"/>
+      <line x1="60" y1="600" x2="740" y2="600" stroke="currentColor" stroke-width="3.2"/>
+      <circle cx="400" cy="600" r="110" fill="none" stroke="currentColor" stroke-width="3.2"/>
+      <circle cx="400" cy="600" r="5" fill="currentColor"/>
+      <!-- área grande superior -->
+      <rect x="220" y="40" width="360" height="180" fill="none" stroke="currentColor" stroke-width="3.2"/>
+      <rect x="310" y="40" width="180" height="70" fill="none" stroke="currentColor" stroke-width="3.2"/>
+      <path d="M290 220 A110 110 0 0 0 510 220" fill="none" stroke="currentColor" stroke-width="3.2"/>
+      <circle cx="400" cy="160" r="5" fill="currentColor"/>
+      <!-- área grande inferior -->
+      <rect x="220" y="980" width="360" height="180" fill="none" stroke="currentColor" stroke-width="3.2"/>
+      <rect x="310" y="1090" width="180" height="70" fill="none" stroke="currentColor" stroke-width="3.2"/>
+      <path d="M290 980 A110 110 0 0 1 510 980" fill="none" stroke="currentColor" stroke-width="3.2"/>
+      <circle cx="400" cy="1040" r="5" fill="currentColor"/>
+      <!-- escanteios -->
+      <path d="M60 65 A25 25 0 0 0 85 40" fill="none" stroke="currentColor" stroke-width="3"/>
+      <path d="M715 40 A25 25 0 0 0 740 65" fill="none" stroke="currentColor" stroke-width="3"/>
+      <path d="M740 1135 A25 25 0 0 0 715 1160" fill="none" stroke="currentColor" stroke-width="3"/>
+      <path d="M85 1160 A25 25 0 0 0 60 1135" fill="none" stroke="currentColor" stroke-width="3"/>
+    </svg>
+    <div class="pitch-light pitch-light-1"></div>
+    <div class="pitch-light pitch-light-2"></div>
+    <div class="bg-video-overlay"></div>
+    <div class="light-orb light-orb-1"></div>
+    <div class="light-orb light-orb-2"></div>
+    <div class="light-orb light-orb-3"></div>
+  </div>
+
+  <main class="page">
+
+    <!-- ================= PAINEL 1 — GABRIEL BUSSINGER ================= -->
+    <section class="hero-v2">
+      <div class="avatar-wrap">
+        <div class="avatar-ring"></div>
+        <img id="hero-avatar" class="avatar-img" src="" alt="Gabriel Bussinger" />
+      </div>
+
+      <h1 id="hero-nome"></h1>
+      <div class="role-lines" id="hero-roles"></div>
+
+      <div class="social-row" id="social-row"></div>
+    </section>
+
+    <!-- ================= BLOCO — CONTATO / NEWSLETTER ================= -->
+    <section class="content-panel">
+      <div class="panel-header">
+        <span class="panel-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.3l3.6 2.6-1.4 4.2h-4.4l-1.4-4.2z" stroke-linejoin="round"/><path d="M12 3.5v3.8M12 14.1v6.4M4.8 8.3l3.1 2.6M16.1 10.9l3.1-2.6M6.2 17.2l3-4.2M17.8 17.2l-3-4.2" stroke-linecap="round"/></svg></span>
+        <span class="panel-title">Gabriel Bussinger</span>
+      </div>
+      <ul class="link-list" id="grupo1-lista"></ul>
+    </section>
+
+    <!-- ================= BLOCO — AGENDA ================= -->
+    <section class="content-panel">
+      <div class="panel-header">
+        <span class="panel-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="5" width="17" height="15" rx="2.2"/><path d="M3.5 9.6h17M8 3v4M16 3v4" stroke-linecap="round"/><circle cx="8.1" cy="14" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="14" r="1" fill="currentColor" stroke="none"/><circle cx="15.9" cy="14" r="1" fill="currentColor" stroke="none"/></svg></span>
+        <span class="panel-title" id="agenda-titulo"></span>
+      </div>
+      <ul class="agenda-list" id="agenda-lista"></ul>
+    </section>
+
+    <!-- ================= PAINEL 2 — DIÁRIO DO TREINADOR ================= -->
+    <section class="content-panel diario-panel">
+      <div class="diario-header">
+        <div class="diario-logo" id="diario-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3.5" y="4" width="5.2" height="16" rx="0.8"/><rect x="9.5" y="4" width="5.2" height="16" rx="0.8"/><path d="M16.4 5.2l4.1-0.9 2.8 14.7-4.1 0.9z" stroke-linejoin="round"/></svg></div>
+        <div>
+          <span class="diario-eyebrow">Ecossistema</span>
+          <span class="diario-title" id="grupo2-titulo"></span>
+          <p class="diario-slogan" id="grupo2-slogan"></p>
+        </div>
+      </div>
+
+      <div class="brand-strip" aria-hidden="true">
+        <div class="brand-track" id="brand-track"></div>
+      </div>
+
+      <ul class="link-list" id="grupo2-lista"></ul>
+    </section>
+
+    <footer class="site-footer">
+      <strong id="footer-nome"></strong>
+      <span id="footer-ecossistema"></span>
+      <span id="footer-dev"></span>
+    </footer>
+
+  </main>
+
+  <script src="data/links.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
