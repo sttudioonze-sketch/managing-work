@@ -138,6 +138,18 @@
       .map((line, i) => `<p class="role-line${i === 0 ? " is-primary" : ""}">${line.split("|").map(s => s.trim()).join(' <span class="sep">|</span> ')}</p>`)
       .join("");
 
+    const badgesHost = $("#cred-badges");
+    if (badgesHost) {
+      badgesHost.innerHTML = (d.hero.badges || [])
+        .map((b) => `
+          <span class="cred-badge">
+            <span class="cred-indicator"><span class="cred-ring"></span><span class="cred-dot"></span></span>
+            ${b.label} <strong>${b.org}</strong>
+          </span>
+        `)
+        .join("");
+    }
+
     // Ícones sociais
     const socialHost = $("#social-row");
     (d.socialRow || []).forEach((item) => {
@@ -175,6 +187,20 @@
 
     const lista2 = $("#grupo2-lista");
     d.grupo2.itens.forEach((link, i) => lista2.appendChild(renderLinkRow(link, i * 0.06)));
+
+    // Carrossel de marcas (rodapé)
+    const brandCarousel = $("#brand-carousel-track");
+    if (brandCarousel) {
+      const marcas = [
+        { src: "images/marcas/marca-podcast.png", alt: "Podcast Diário do Treinador" },
+        { src: "images/marcas/marca-comunidade.png", alt: "Comunidade Diário do Treinador" },
+        { src: "images/marcas/marca-mentoria.png", alt: "Mentoria Diário do Treinador" },
+        { src: "images/marcas/marca-bestsellers.png", alt: "Best Sellers Aplicados ao Futebol" }
+      ];
+      const buildImgs = () =>
+        marcas.map((m) => `<img src="${m.src}" alt="${m.alt}" loading="lazy" />`).join("");
+      brandCarousel.innerHTML = buildImgs() + buildImgs();
+    }
 
     // Footer
     $("#footer-nome").textContent = d.footer.nome;

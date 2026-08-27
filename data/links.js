@@ -31,8 +31,11 @@ const SITE_DATA = {
       nome: "Gabriel Bussinger",
       roleLines: [
         "Coordenador Técnico Geral no Vasco da Gama SAF",
-        "Instrutor Conmebol | Instrutor CBF",
         "Mentor de Profissionais do Futebol | Idealizador do Podcast Diário do Treinador"
+      ],
+      badges: [
+        { label: "Instrutor", org: "CONMEBOL" },
+        { label: "Instrutor", org: "CBF" }
       ]
     },
     socialRow: [
@@ -149,8 +152,11 @@ const SITE_DATA = {
       nome: "Gabriel Bussinger",
       roleLines: [
         "General Technical Coordinator at Vasco da Gama SAF",
-        "Conmebol Instructor | CBF Instructor",
         "Mentor for Football Professionals | Creator of the Coach's Diary Podcast"
+      ],
+      badges: [
+        { label: "Instructor", org: "CONMEBOL" },
+        { label: "Instructor", org: "CBF" }
       ]
     },
     socialRow: [
@@ -266,8 +272,11 @@ const SITE_DATA = {
       nome: "Gabriel Bussinger",
       roleLines: [
         "Coordinador Técnico General en Vasco da Gama SAF",
-        "Instructor Conmebol | Instructor CBF",
         "Mentor de Profesionales del Fútbol | Creador del Podcast Diario del Entrenador"
+      ],
+      badges: [
+        { label: "Instructor", org: "CONMEBOL" },
+        { label: "Instructor", org: "CBF" }
       ]
     },
     socialRow: [
@@ -383,8 +392,11 @@ const SITE_DATA = {
       nome: "غابرييل بوسينجر",
       roleLines: [
         "المنسق الفني العام في فاسكو دا جاما SAF",
-        "مدرب كونميبول | مدرب الاتحاد البرازيلي لكرة القدم",
         "موجّه لمحترفي كرة القدم | مؤسس بودكاست يوميات المدرب"
+      ],
+      badges: [
+        { label: "مدرب", org: "CONMEBOL" },
+        { label: "مدرب", org: "CBF" }
       ]
     },
     socialRow: [
