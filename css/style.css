@@ -835,15 +835,15 @@ button { font: inherit; }
 /* Cards em destaque — maiores e em cor diferenciada (ciano → azul) */
 .link-card.is-featured {
   align-items: flex-start;
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+  background: linear-gradient(135deg, #bdfff2 0%, #eaf3ff 55%, #cfe3ff 100%);
   border-color: transparent;
   padding: 20px 20px;
-  box-shadow: 0 0 0 2px rgba(20, 255, 227, 0.55);
+  box-shadow: 0 0 0 2px rgba(20, 255, 227, 0.3);
   animation: featuredGlow 2.6s ease-in-out infinite;
 }
 @keyframes featuredGlow {
-  0%, 100% { box-shadow: 0 0 0 2px rgba(20, 255, 227, 0.35); }
-  50%      { box-shadow: 0 0 0 2px rgba(20, 255, 227, 0.85); }
+  0%, 100% { box-shadow: 0 0 0 2px rgba(20, 255, 227, 0.18); }
+  50%      { box-shadow: 0 0 0 2px rgba(20, 255, 227, 0.5); }
 }
 .link-card.is-featured .title {
   color: #000;
