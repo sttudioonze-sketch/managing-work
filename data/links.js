@@ -65,12 +65,13 @@ const SITE_DATA = {
   agenda: {
     titulo: "Próximos Eventos",
     eventos: [
-           {
+              {
         dia: "07",
         mes: "SET",
-        tema: "Palestra na FGF",
-        local: "Porto Alegre - FGF",
-        formato: "Online",
+        tema: "Metodologia Centrada no Atleta",
+        local: "Federação Gaúcha de Futebol",
+        horario: "19:00",
+        formato: "Físico",
         url: "https://SUBSTITUA-LINK-DE-INSCRICAO"
       },
       {
