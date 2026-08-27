@@ -1,5 +1,5 @@
 /* ==========================================================================
-   DIÃRIO DO TREINADOR â€” Design tokens
+   DIÁRIO DO TREINADOR — Design tokens
    ========================================================================== */
 :root {
   --bg: #080e20;
@@ -16,7 +16,7 @@
   --glass: rgba(245, 245, 245, 0.045);
   --glass-hover: rgba(245, 245, 245, 0.08);
 
-  /* Testando Kalam (manuscrita, com bom peso nativo em Bold) nos tÃ­tulos.
+  /* Testando Kalam (manuscrita, com bom peso nativo em Bold) nos títulos.
      Carlito nos demais textos. */
   --font-display: "Kalam", "Carlito", cursive;
   --font-tag: "Kalam", "Carlito", cursive;
@@ -64,7 +64,7 @@ button { font: inherit; }
 }
 
 /* ==========================================================================
-   Fundo â€” linhas onduladas animadas (flow field), estilo referÃªncia
+   Fundo — linhas onduladas animadas (flow field), estilo referência
    ========================================================================== */
 .flow-bg {
   position: fixed;
@@ -175,7 +175,7 @@ button { font: inherit; }
 }
 
 /* ==========================================================================
-   Seletor de idiomas â€” bandeiras redondas, sempre visÃ­veis
+   Seletor de idiomas — bandeiras redondas, sempre visíveis
    ========================================================================== */
 .lang-switcher {
   display: flex;
@@ -234,7 +234,7 @@ button { font: inherit; }
 }
 
 /* ==========================================================================
-   Hero v2 â€” avatar circular + pill + nome + bio + Ã­cones sociais
+   Hero v2 — avatar circular + pill + nome + bio + ícones sociais
    ========================================================================== */
 .hero-v2 {
   width: 100%;
@@ -298,7 +298,7 @@ button { font: inherit; }
   animation: heroIn 1s var(--ease) 0.1s both;
 }
 
-/* Linhas de papÃ©is/credenciais do Gabriel (3 linhas fixas) */
+/* Linhas de papéis/credenciais do Gabriel (3 linhas fixas) */
 .role-lines {
   max-width: 480px;
   margin: 0 0 22px;
@@ -324,7 +324,7 @@ button { font: inherit; }
   opacity: 0.8;
 }
 
-/* Ãcones sociais (topo) â€” ciano, maiores */
+/* Ícones sociais (topo) — ciano, maiores */
 .social-row {
   display: flex;
   align-items: center;
@@ -353,7 +353,7 @@ button { font: inherit; }
 }
 
 /* ==========================================================================
-   Carrossel â€” faixa fina e contÃ­nua com as marcas
+   Carrossel — faixa fina e contínua com as marcas
    ========================================================================== */
 .brand-strip {
   width: 100%;
@@ -425,7 +425,7 @@ button { font: inherit; }
 }
 
 /* ==========================================================================
-   Blocos de conteÃºdo â€” mesmo estilo visual do painel DiÃ¡rio do Treinador
+   Blocos de conteúdo — mesmo estilo visual do painel Diário do Treinador
    ========================================================================== */
 .content-panel {
   width: 100%;
@@ -469,7 +469,7 @@ button { font: inherit; }
 }
 
 /* ==========================================================================
-   Agenda de prÃ³ximos eventos
+   Agenda de próximos eventos
    ========================================================================== */
 .agenda-list {
   list-style: none;
@@ -553,7 +553,7 @@ button { font: inherit; }
   color: var(--muted);
 }
 .agenda-hora::before {
-  content: "â€¢";
+  content: "•";
   color: var(--muted-dim);
   line-height: 1;
 }
@@ -591,7 +591,7 @@ button { font: inherit; }
 }
 
 /* ==========================================================================
-   Painel 2 â€” DiÃ¡rio do Treinador (visualmente delimitado)
+   Painel 2 — Diário do Treinador (visualmente delimitado)
    ========================================================================== */
 .diario-panel {
   margin-top: 28px;
@@ -714,7 +714,7 @@ button { font: inherit; }
 .link-card:hover::after { left: 130%; }
 .link-card:active { transform: translateY(0) scale(0.985); }
 
-/* Cards em destaque â€” maiores e em cor diferenciada (ciano â†’ azul) */
+/* Cards em destaque — maiores e em cor diferenciada (ciano → azul) */
 .link-card.is-featured {
   align-items: flex-start;
   background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
@@ -946,7 +946,7 @@ button { font: inherit; }
   .hero-v2 h1 { font-size: 30px; }
   .pitch-light { width: 70vw; height: 40vh; filter: blur(50px); }
 
-  /* TÃ­tulos dos botÃµes normais numa linha sÃ³ */
+  /* Títulos dos botões normais numa linha só */
   .link-icon { width: 42px; height: 42px; border-radius: 12px; }
   .link-icon svg { width: 20px; height: 20px; }
   .link-card { padding: 13px 14px; gap: 12px; }
@@ -959,7 +959,7 @@ button { font: inherit; }
     text-overflow: ellipsis;
   }
 
-  /* Cards em destaque (Mentoria/Best Seller) mais compactos, tÃ­tulo em atÃ© 2 linhas */
+  /* Cards em destaque (Mentoria/Best Seller) mais compactos, título em até 2 linhas */
   .link-card.is-featured { padding: 16px; }
   .link-card.is-featured .link-icon { width: 44px; height: 44px; }
   .link-card.is-featured .link-icon svg { width: 21px; height: 21px; }
