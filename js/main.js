@@ -21,7 +21,8 @@
     youtube:   { fg: "#ff5a5a", bg: "rgba(255, 90, 90, 0.14)" },
     instagram: { fg: "#ff6fa5", bg: "rgba(255, 111, 165, 0.14)" },
     target:    { fg: "var(--accent)", bg: "rgba(20, 255, 227, 0.1)" },
-    play:      { fg: "var(--accent)", bg: "rgba(20, 255, 227, 0.1)" }
+    play:      { fg: "var(--accent)", bg: "rgba(20, 255, 227, 0.1)" },
+    people:    { fg: "#ffb84f", bg: "rgba(255, 184, 79, 0.14)" }
   };
 
   function buildMiniTrack(items) {

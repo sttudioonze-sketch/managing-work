@@ -14,5 +14,6 @@ const ICONS = {
   books: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3.5" y="4" width="5.2" height="16" rx="0.8"/><rect x="9.5" y="4" width="5.2" height="16" rx="0.8"/><path d="M16.4 5.2l4.1-0.9 2.8 14.7-4.1 0.9z" stroke-linejoin="round"/></svg>`,
   pin: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0112 2a7 7 0 017 7.5C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.3"/></svg>`,
   clock: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-  format: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="5" width="17" height="13" rx="2.2"/><path d="M8 21h8M12 18v3" stroke-linecap="round"/></svg>`
+  format: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="5" width="17" height="13" rx="2.2"/><path d="M8 21h8M12 18v3" stroke-linecap="round"/></svg>`,
+  people: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8.5" cy="8" r="3"/><path d="M2.8 19c0-3.1 2.6-5.5 5.7-5.5S14.2 15.9 14.2 19" stroke-linecap="round"/><circle cx="17" cy="8.5" r="2.3"/><path d="M15.7 13.7c2.5.3 4.5 2.4 4.5 5" stroke-linecap="round"/></svg>`
 };

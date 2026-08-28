@@ -143,6 +143,13 @@ const SITE_DATA = {
           ]
         },
         {
+          titulo: '<span class="accent-word">Banco</span> de Profissionais',
+          badge: "Em breve!",
+          descricao: "Acesse aqui profissionais formados pela Metodologia Diário do Treinador",
+          url: "#",
+          icone: "people"
+        },
+        {
           titulo: 'Canal do <span class="accent-word">Youtube</span>',
           descricao: "Palestras, Podcasts e conteúdos aprofundados, para profissionais do futebol",
           url: "https://www.youtube.com/@gabrielbussinger3386",
@@ -287,6 +294,13 @@ const SITE_DATA = {
             { titulo: "How to Win Friends & Influence People", autor: "Dale Carnegie", capa: "images/livros/capa-comofazeramigos.jpg" },
             { titulo: "The Servant", autor: "James C. Hunter", capa: "images/livros/capa-mongeexecutivo.jpg" }
           ]
+        },
+        {
+          titulo: '<span class="accent-word">Professional</span> Directory',
+          badge: "Coming soon!",
+          descricao: "Find professionals trained through the Coach's Diary Methodology",
+          url: "#",
+          icone: "people"
         },
         {
           titulo: 'YouTube <span class="accent-word">Channel</span>',
@@ -435,6 +449,13 @@ const SITE_DATA = {
           ]
         },
         {
+          titulo: '<span class="accent-word">Banco</span> de Profesionales',
+          badge: "¡Próximamente!",
+          descricao: "Encuentra profesionales formados con la Metodología Diario del Entrenador",
+          url: "#",
+          icone: "people"
+        },
+        {
           titulo: 'Canal de <span class="accent-word">YouTube</span>',
           descricao: "Charlas, podcasts y contenidos a profundidad, para profesionales del fútbol",
           url: "https://www.youtube.com/@gabrielbussinger3386",
@@ -579,6 +600,13 @@ const SITE_DATA = {
             { titulo: "كيف تكسب الأصدقاء وتؤثر في الناس", autor: "ديل كارنيجي", capa: "images/livros/capa-comofazeramigos.jpg" },
             { titulo: "الراهب والمدير التنفيذي", autor: "جيمس هانتر", capa: "images/livros/capa-mongeexecutivo.jpg" }
           ]
+        },
+        {
+          titulo: '<span class="accent-word">دليل</span> المحترفين',
+          badge: "قريباً!",
+          descricao: "تعرّف على المحترفين المتخرجين من منهجية يوميات المدرب",
+          url: "#",
+          icone: "people"
         },
         {
           titulo: 'قناة <span class="accent-word">يوتيوب</span>',
