@@ -429,7 +429,7 @@ button { font: inherit; }
 .brand-strip {
   width: 100%;
   max-width: 100%;
-  margin: 20px 0 22px;
+  margin: 20px 0 6px;
   padding: 12px 0;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
@@ -936,7 +936,7 @@ button { font: inherit; }
   align-self: center;
 }
 .link-card.is-centered .title {
-  font-size: clamp(28px, 9vw, 52px);
+  font-size: clamp(32px, 10.5vw, 60px);
   font-family: "Protest Riot", cursive;
   font-weight: 400;
   letter-spacing: 0.005em;
@@ -987,13 +987,26 @@ button { font: inherit; }
 }
 .mini-item {
   display: flex;
-  flex-direction: column;
-  gap: 1px;
+  align-items: center;
+  gap: 10px;
   padding: 0 16px;
   border-right: 1px solid rgba(245, 245, 245, 0.16);
   white-space: nowrap;
 }
 .mini-item:last-child { border-right: none; }
+.mini-capa {
+  flex: none;
+  width: 30px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+.mini-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
 .mini-title {
   font-family: var(--font-body);
   font-weight: 700;
@@ -1127,8 +1140,8 @@ button { font: inherit; }
 .brand-carousel {
   width: 100%;
   max-width: 100%;
-  margin: 0 0 20px;
-  padding: 10px 0 0;
+  margin: 0 0 16px;
+  padding: 0;
   overflow: hidden;
   -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
   mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
@@ -1193,16 +1206,23 @@ button { font: inherit; }
 /* Topo da Página 2 — botão voltar + seletor de idioma */
 .page2-topbar {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: stretch;
+  justify-content: center;
+  gap: 10px;
   width: 100%;
   max-width: 480px;
   margin: 0 auto 26px;
 }
+.page2-topbar > * { flex: 1; }
+.page2-topbar .lang-switcher {
+  width: 100%;
+  justify-content: center;
+  margin: 0;
+}
 .page2-video {
   width: 100%;
   max-width: 480px;
-  margin: 0 auto 26px;
+  margin: 0 auto 22px;
 }
 .page2-video-frame {
   position: relative;
@@ -1240,10 +1260,11 @@ button { font: inherit; }
   border: 0;
 }
 .page2-back {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
-  padding: 8px 14px 8px 10px;
+  padding: 10px 14px;
   border-radius: 999px;
   background: rgba(245, 245, 245, 0.05);
   border: 1px solid var(--border);

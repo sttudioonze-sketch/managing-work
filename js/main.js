@@ -29,8 +29,11 @@
       .map(
         (item) => `
         <span class="mini-item">
-          <span class="mini-title">${item.titulo}</span>
-          ${item.autor ? `<span class="mini-autor">${item.autor}</span>` : ""}
+          ${item.capa ? `<img class="mini-capa" src="${item.capa}" alt="${item.titulo}" loading="lazy" />` : ""}
+          <span class="mini-text">
+            <span class="mini-title">${item.titulo}</span>
+            ${item.autor ? `<span class="mini-autor">${item.autor}</span>` : ""}
+          </span>
         </span>`
       )
       .join("");

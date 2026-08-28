@@ -4,8 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#14ffe3" />
-<title>Ecossistema Diário do Treinador | Gabriel Bussinger</title>
-<meta name="description" content="Mentoria, cursos, podcast e comunidade do Ecossistema Diário do Treinador — com Gabriel Bussinger." />
+<title>Gabriel Bussinger | Diário do Treinador</title>
+<meta name="description" content="Gabriel Bussinger — Coordenador Técnico Geral, instrutor CONMEBOL/CBF e idealizador do Ecossistema Diário do Treinador. Mentoria, cursos e conteúdos para treinadores de futebol." />
 
 <!-- Favicon -->
 <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
@@ -18,13 +18,19 @@
 <!-- Compartilhamento (WhatsApp, Instagram, Facebook, etc.) -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Diário do Treinador" />
-<meta property="og:title" content="Ecossistema Diário do Treinador | Gabriel Bussinger" />
-<meta property="og:description" content="Mentoria, cursos, podcast e comunidade do Ecossistema Diário do Treinador." />
-<meta property="og:image" content="https://diariodotreinador.com.br/images/og-share.jpg" />
+<meta property="og:title" content="Gabriel Bussinger | Diário do Treinador" />
+<meta property="og:description" content="Educação, evolução e desenvolvimento integral de treinadores e profissionais do futebol. Mentoria, cursos e conteúdos com Gabriel Bussinger." />
+<meta property="og:image" content="https://diariodotreinador.com.br/gabriel-bussinger.htmlimages/og-share.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://diariodotreinador.com.br/" />
+<meta property="og:url" content="https://diariodotreinador.com.br/gabriel-bussinger.html" />
 <meta property="og:locale" content="pt_BR" />
+
+<!-- Compartilhamento (X/Twitter) -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Gabriel Bussinger | Diário do Treinador" />
+<meta name="twitter:description" content="Educação, evolução e desenvolvimento integral de treinadores e profissionais do futebol." />
+<meta name="twitter:image" content="https://diariodotreinador.com.br/gabriel-bussinger.htmlimages/og-share.jpg" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,14 +46,17 @@
       <line x1="60" y1="600" x2="740" y2="600" stroke="currentColor" stroke-width="3.2"/>
       <circle cx="400" cy="600" r="110" fill="none" stroke="currentColor" stroke-width="3.2"/>
       <circle cx="400" cy="600" r="5" fill="currentColor"/>
+      <!-- área grande superior -->
       <rect x="220" y="40" width="360" height="180" fill="none" stroke="currentColor" stroke-width="3.2"/>
       <rect x="310" y="40" width="180" height="70" fill="none" stroke="currentColor" stroke-width="3.2"/>
       <path d="M290 220 A110 110 0 0 0 510 220" fill="none" stroke="currentColor" stroke-width="3.2"/>
       <circle cx="400" cy="160" r="5" fill="currentColor"/>
+      <!-- área grande inferior -->
       <rect x="220" y="980" width="360" height="180" fill="none" stroke="currentColor" stroke-width="3.2"/>
       <rect x="310" y="1090" width="180" height="70" fill="none" stroke="currentColor" stroke-width="3.2"/>
       <path d="M290 980 A110 110 0 0 1 510 980" fill="none" stroke="currentColor" stroke-width="3.2"/>
       <circle cx="400" cy="1040" r="5" fill="currentColor"/>
+      <!-- escanteios -->
       <path d="M60 65 A25 25 0 0 0 85 40" fill="none" stroke="currentColor" stroke-width="3"/>
       <path d="M715 40 A25 25 0 0 0 740 65" fill="none" stroke="currentColor" stroke-width="3"/>
       <path d="M740 1135 A25 25 0 0 0 715 1160" fill="none" stroke="currentColor" stroke-width="3"/>
@@ -63,43 +72,54 @@
 
   <main class="page">
 
-    <!-- ================= VÍDEO DE APRESENTAÇÃO ================= -->
-    <!-- Cole aqui o embed do vídeo (YouTube/Vimeo) dentro de <div class="page2-video-frame">,
-         ou troque por uma tag <video> — o container já mantém a proporção 16:9 automaticamente. -->
-    <div class="page2-video">
-      <div class="page2-video-frame">
-        <!-- <iframe src="https://www.youtube.com/embed/SEU_VIDEO_ID" title="Vídeo de apresentação" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+    <!-- ================= PAINEL 1 — GABRIEL BUSSINGER ================= -->
+    <section class="hero-v2">
+      <div class="avatar-wrap">
+        <div class="avatar-ring"></div>
+        <img id="hero-avatar" class="avatar-img" src="" alt="Gabriel Bussinger" />
       </div>
-    </div>
 
-    <div class="page2-topbar">
-      <a href="gabriel-bussinger.html" class="page2-back" id="page2-back">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span id="page2-back-label">Voltar</span>
-      </a>
+      <h1 id="hero-nome"></h1>
+      <div class="role-lines" id="hero-roles"></div>
+      <div class="cred-badges" id="cred-badges"></div>
+
+      <div class="social-row" id="social-row"></div>
+
       <div class="lang-switcher" id="lang-switcher" aria-label="Selecionar idioma"></div>
-    </div>
+    </section>
 
-    <!-- ================= ECOSSISTEMA DIÁRIO DO TREINADOR ================= -->
-    <section class="content-panel diario-panel">
-      <div class="diario-header">
-        <div class="diario-logo" id="diario-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3.5" y="4" width="5.2" height="16" rx="0.8"/><rect x="9.5" y="4" width="5.2" height="16" rx="0.8"/><path d="M16.4 5.2l4.1-0.9 2.8 14.7-4.1 0.9z" stroke-linejoin="round"/></svg></div>
+    <!-- ================= CAIXA 1 — NEWSLETTER + PODCAST ================= -->
+    <section class="content-panel">
+      <div class="panel-header">
+        <span class="panel-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.73 21a2 2 0 01-3.46 0" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         <div>
-          <span class="diario-eyebrow" id="diario-eyebrow">Ecossistema</span>
-          <span class="diario-title" id="grupo2-titulo"></span>
-          <p class="diario-slogan" id="grupo2-slogan"></p>
+          <span class="panel-title" id="grupo1-titulo"></span>
+          <p class="panel-subtitle" id="grupo1-subtitulo"></p>
         </div>
       </div>
+      <ul class="link-list" id="grupo1-lista"></ul>
+    </section>
 
-      <div class="brand-strip" aria-hidden="true">
-        <div class="brand-track" id="brand-track"></div>
+    <!-- ================= CAIXA 2 — AGENDA ================= -->
+    <section class="content-panel">
+      <div class="panel-header">
+        <span class="panel-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="5" width="17" height="15" rx="2.2"/><path d="M3.5 9.6h17M8 3v4M16 3v4" stroke-linecap="round"/><circle cx="8.1" cy="14" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="14" r="1" fill="currentColor" stroke="none"/><circle cx="15.9" cy="14" r="1" fill="currentColor" stroke="none"/></svg></span>
+        <div>
+          <span class="panel-title" id="agenda-titulo"></span>
+          <p class="panel-subtitle" id="agenda-heading"></p>
+        </div>
       </div>
+      <ul class="agenda-list-flat" id="agenda-lista"></ul>
+    </section>
 
-      <div class="brand-carousel" aria-hidden="true">
-        <div class="brand-carousel-track" id="brand-carousel-track"></div>
-      </div>
+    <!-- ================= CAIXA 3 — PALESTRAS E EVENTOS (contato) ================= -->
+    <section class="content-panel">
+      <ul class="link-list" id="grupo3-lista"></ul>
+    </section>
 
-      <ul class="link-list" id="grupo2-lista"></ul>
+    <!-- ================= CAIXA 4 — ECOSSISTEMA (leva pra página 2) ================= -->
+    <section class="content-panel">
+      <ul class="link-list" id="grupo4-lista"></ul>
     </section>
 
     <footer class="site-footer">

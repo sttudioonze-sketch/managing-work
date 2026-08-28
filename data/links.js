@@ -101,7 +101,7 @@ const SITE_DATA = {
       titulo: '<span class="accent-word">Ecossistema</span> Diário do Treinador',
       subtitulo: "Conheça, aplique e transforme",
       descricao: "Um ecossistema completo para educação, evolução e desenvolvimento integral de treinadores e profissionais do futebol",
-      url: "diario-do-treinador.html",
+      url: "index.html",
       icone: "books",
       featured: true,
       centered: true,
@@ -131,10 +131,13 @@ const SITE_DATA = {
           icone: "play",
           featured: true,
           livros: [
-            { titulo: "Comece pelo Porquê", autor: "Simon Sinek" },
-            { titulo: "O Poder da Ação", autor: "[Substitua pelo autor]" },
-            { titulo: "A Coragem de Ser Imperfeito", autor: "Brené Brown" },
-            { titulo: "Em breve, outros títulos" }
+            { titulo: "Os 7 Hábitos das Pessoas Altamente Eficazes", autor: "Stephen R. Covey", capa: "images/livros/capa-7habitos.jpg" },
+            { titulo: "O Poder da Ação", autor: "Paulo Vieira", capa: "images/livros/capa-poderdaacao.jpg" },
+            { titulo: "Mindset", autor: "Carol S. Dweck", capa: "images/livros/capa-mindset.jpg" },
+            { titulo: "A Coragem de Ser Imperfeito", autor: "Brené Brown", capa: "images/livros/capa-coragemimperfeito.jpg" },
+            { titulo: "Comece pelo Porquê", autor: "Simon Sinek", capa: "images/livros/capa-comecepeloporque.jpg" },
+            { titulo: "Como Fazer Amigos & Influenciar Pessoas", autor: "Dale Carnegie", capa: "images/livros/capa-comofazeramigos.jpg" },
+            { titulo: "O Monge e o Executivo", autor: "James C. Hunter", capa: "images/livros/capa-mongeexecutivo.jpg" }
           ]
         },
         {
@@ -242,7 +245,7 @@ const SITE_DATA = {
       titulo: `<span class="accent-word">Ecosystem</span> — Coach's Diary`,
       subtitulo: "Learn it, apply it, transform",
       descricao: "A complete ecosystem for the education, growth, and full development of coaches and football professionals",
-      url: "diario-do-treinador.html",
+      url: "index.html",
       icone: "books",
       featured: true,
       centered: true,
@@ -272,10 +275,13 @@ const SITE_DATA = {
           icone: "play",
           featured: true,
           livros: [
-            { titulo: "Start With Why", autor: "Simon Sinek" },
-            { titulo: "The Power of Action", autor: "[Replace with author]" },
-            { titulo: "The Gifts of Imperfection", autor: "Brené Brown" },
-            { titulo: "More titles coming soon" }
+            { titulo: "The 7 Habits of Highly Effective People", autor: "Stephen R. Covey", capa: "images/livros/capa-7habitos.jpg" },
+            { titulo: "The Power of Action", autor: "Paulo Vieira", capa: "images/livros/capa-poderdaacao.jpg" },
+            { titulo: "Mindset", autor: "Carol S. Dweck", capa: "images/livros/capa-mindset.jpg" },
+            { titulo: "The Gifts of Imperfection", autor: "Brené Brown", capa: "images/livros/capa-coragemimperfeito.jpg" },
+            { titulo: "Start With Why", autor: "Simon Sinek", capa: "images/livros/capa-comecepeloporque.jpg" },
+            { titulo: "How to Win Friends & Influence People", autor: "Dale Carnegie", capa: "images/livros/capa-comofazeramigos.jpg" },
+            { titulo: "The Servant", autor: "James C. Hunter", capa: "images/livros/capa-mongeexecutivo.jpg" }
           ]
         },
         {
@@ -383,7 +389,7 @@ const SITE_DATA = {
       titulo: '<span class="accent-word">Ecosistema</span> Diario del Entrenador',
       subtitulo: "Conoce, aplica, transforma",
       descricao: "Un ecosistema completo para la educación, evolución y desarrollo integral de entrenadores y profesionales del fútbol",
-      url: "diario-do-treinador.html",
+      url: "index.html",
       icone: "books",
       featured: true,
       centered: true,
@@ -413,10 +419,13 @@ const SITE_DATA = {
           icone: "play",
           featured: true,
           livros: [
-            { titulo: "Empieza con el Porqué", autor: "Simon Sinek" },
-            { titulo: "El Poder de la Acción", autor: "[Reemplace con el autor]" },
-            { titulo: "Los Dones de la Imperfección", autor: "Brené Brown" },
-            { titulo: "Próximamente, más títulos" }
+            { titulo: "Los 7 Hábitos de la Gente Altamente Efectiva", autor: "Stephen R. Covey", capa: "images/livros/capa-7habitos.jpg" },
+            { titulo: "El Poder de la Acción", autor: "Paulo Vieira", capa: "images/livros/capa-poderdaacao.jpg" },
+            { titulo: "Mindset", autor: "Carol S. Dweck", capa: "images/livros/capa-mindset.jpg" },
+            { titulo: "Los Dones de la Imperfección", autor: "Brené Brown", capa: "images/livros/capa-coragemimperfeito.jpg" },
+            { titulo: "Empieza con el Porqué", autor: "Simon Sinek", capa: "images/livros/capa-comecepeloporque.jpg" },
+            { titulo: "Cómo Ganar Amigos e Influir sobre las Personas", autor: "Dale Carnegie", capa: "images/livros/capa-comofazeramigos.jpg" },
+            { titulo: "El Monje que Vendió su Ferrari... El Sirviente", autor: "James C. Hunter", capa: "images/livros/capa-mongeexecutivo.jpg" }
           ]
         },
         {
@@ -524,7 +533,7 @@ const SITE_DATA = {
       titulo: '<span class="accent-word">منظومة</span> يوميات المدرب',
       subtitulo: "تعرّف، طبّق، تحوّل",
       descricao: "منظومة متكاملة لتعليم وتطوير مدربي ومحترفي كرة القدم بشكل شامل",
-      url: "diario-do-treinador.html",
+      url: "index.html",
       icone: "books",
       featured: true,
       centered: true,
@@ -554,10 +563,13 @@ const SITE_DATA = {
           icone: "play",
           featured: true,
           livros: [
-            { titulo: "ابدأ بالسؤال: لماذا", autor: "سايمون سينك" },
-            { titulo: "قوة الفعل", autor: "[استبدل باسم المؤلف]" },
-            { titulo: "هدايا النقص", autor: "برينيه براون" },
-            { titulo: "عناوين جديدة قريباً" }
+            { titulo: "العادات السبع للناس الأكثر فعالية", autor: "ستيفن كوفي", capa: "images/livros/capa-7habitos.jpg" },
+            { titulo: "قوة الفعل", autor: "باولو فييرا", capa: "images/livros/capa-poderdaacao.jpg" },
+            { titulo: "العقلية", autor: "كارول دويك", capa: "images/livros/capa-mindset.jpg" },
+            { titulo: "هدايا النقص", autor: "برينيه براون", capa: "images/livros/capa-coragemimperfeito.jpg" },
+            { titulo: "ابدأ بالسؤال: لماذا", autor: "سايمون سينك", capa: "images/livros/capa-comecepeloporque.jpg" },
+            { titulo: "كيف تكسب الأصدقاء وتؤثر في الناس", autor: "ديل كارنيجي", capa: "images/livros/capa-comofazeramigos.jpg" },
+            { titulo: "الراهب والمدير التنفيذي", autor: "جيمس هانتر", capa: "images/livros/capa-mongeexecutivo.jpg" }
           ]
         },
         {
