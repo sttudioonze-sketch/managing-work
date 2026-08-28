@@ -141,7 +141,15 @@
 
     a.innerHTML = `
       <span class="link-body">
-        ${link.badge ? `<span class="link-badge">${link.badgeIcon ? `<span class="link-badge-icon">${iconSvg(link.badgeIcon)}</span>` : ""}${link.badge}</span>` : ""}
+        ${link.badge ? `
+          <span class="link-badge">
+            ${link.badgeIcon ? `<span class="link-badge-icon">${iconSvg(link.badgeIcon)}</span>` : ""}
+            <span class="link-badge-text">
+              <span class="link-badge-line">${link.badge}</span>
+              ${link.badgeStatus ? `<span class="link-badge-status"><span class="role-dot"></span>${link.badgeStatus}</span>` : ""}
+            </span>
+          </span>
+        ` : ""}
         <span class="title">${link.titulo}</span>
         ${link.subtitulo ? `<span class="subtitle">${link.subtitulo}</span>` : ""}
         <span class="desc">${link.descricao || ""}</span>

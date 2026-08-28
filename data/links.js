@@ -115,7 +115,8 @@ const SITE_DATA = {
       itens: [
         {
           titulo: '<span class="accent-word">Mentoria</span> Diário do Treinador',
-          badge: "Temporada 2026 — Inscrições disponíveis",
+          badge: "Temporada 2026",
+          badgeStatus: "Inscrições abertas",
           subtitulo: "Conheça, aplique e transforme",
           descricao: "Desenvolvimento Profissional e Pessoal para Treinadores e profissionais do futebol",
           url: "https://pay.hotmart.com/I103504037F?off=nhfhufix",
@@ -259,7 +260,8 @@ const SITE_DATA = {
       itens: [
         {
           titulo: `<span class="accent-word">Mentorship</span> — Coach's Diary`,
-          badge: "2026 Season — Enrollment open",
+          badge: "2026 Season",
+          badgeStatus: "Enrollment open",
           subtitulo: "Learn it, apply it, transform",
           descricao: "Professional and personal development for coaches and football professionals",
           url: "https://pay.hotmart.com/I103504037F?off=nhfhufix",
@@ -403,7 +405,8 @@ const SITE_DATA = {
       itens: [
         {
           titulo: '<span class="accent-word">Mentoría</span> Diario del Entrenador',
-          badge: "Temporada 2026 — Inscripciones abiertas",
+          badge: "Temporada 2026",
+          badgeStatus: "Inscripciones abiertas",
           subtitulo: "Conoce, aplica, transforma",
           descricao: "Desarrollo profesional y personal para entrenadores y profesionales del fútbol",
           url: "https://pay.hotmart.com/I103504037F?off=nhfhufix",
@@ -547,7 +550,8 @@ const SITE_DATA = {
       itens: [
         {
           titulo: '<span class="accent-word">الإرشاد</span> — يوميات المدرب',
-          badge: "موسم 2026 — التسجيل متاح",
+          badge: "موسم 2026",
+          badgeStatus: "التسجيل متاح",
           subtitulo: "تعرّف، طبّق، تحوّل",
           descricao: "تطور مهني وشخصي للمدربين ومحترفي كرة القدم",
           url: "https://pay.hotmart.com/I103504037F?off=nhfhufix",
