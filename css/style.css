@@ -404,8 +404,8 @@ button { font: inherit; }
   animation: heroIn 1s var(--ease) 0.2s both;
 }
 .social-btn {
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -415,7 +415,7 @@ button { font: inherit; }
   color: var(--accent);
   transition: transform 0.3s var(--ease), border-color 0.3s var(--ease), background 0.3s var(--ease), color 0.3s var(--ease);
 }
-.social-btn svg { width: 23px; height: 23px; }
+.social-btn svg { width: 16px; height: 16px; }
 .social-btn:hover {
   transform: translateY(-3px);
   border-color: var(--accent);
@@ -932,17 +932,17 @@ button { font: inherit; }
   align-self: center;
 }
 .link-card.is-centered .title {
-  font-size: 2.7em;
+  font-size: 4.05em;
   font-family: "Protest Riot", cursive;
   font-weight: 400;
   letter-spacing: 0.005em;
   -webkit-text-stroke: 0;
-  line-height: 1.02;
+  line-height: 0.98;
   padding: 0 2px;
 }
 .link-card.is-centered .subtitle {
-  font-size: 15px;
-  margin-top: 4px;
+  font-size: 19.5px;
+  margin-top: 8px;
 }
 .link-card.is-centered .link-arrow { display: none; }
 .link-card.is-centered .cta-line {
@@ -1219,6 +1219,21 @@ button { font: inherit; }
   .avatar-wrap { width: 128px; height: 128px; }
   .hero-v2 h1 { font-size: 32px; }
 
+  /* Pills da agenda (Cidade/Horário/Formato) mais compactas pra caber numa linha só */
+  .agenda-pills { gap: 4px; flex-wrap: nowrap; }
+  .agenda-pill {
+    padding: 3px 7px;
+    font-size: 9px;
+    gap: 3px;
+    white-space: nowrap;
+    max-width: 130px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .agenda-pill svg { width: 9px; height: 9px; }
+  .agenda-date { width: 50px; height: 50px; }
+  .agenda-date .dia { font-size: 19px; }
+
   /* Cabeçalho "Diário do Treinador": ícone e textos centralizados no mobile */
   .diario-header {
     flex-direction: column;
@@ -1262,7 +1277,12 @@ button { font: inherit; }
     overflow: visible;
     text-overflow: unset;
   }
+  .link-card.is-centered .title {
+    font-size: 2.05em;
+    line-height: 1.02;
+  }
   .link-card.is-featured .subtitle { font-size: 11px; }
+  .link-card.is-centered .subtitle { font-size: 16px; }
   .link-card.is-featured .desc { font-size: 11.5px; -webkit-line-clamp: 2; }
   .cta-line { font-size: 12.5px; margin-top: 8px; }
   .mini-strip { margin-top: 8px; padding-top: 8px; }
@@ -1274,4 +1294,5 @@ button { font: inherit; }
   .link-card { padding: 13px; }
   .link-body .title { font-size: 12.5px; }
   .link-card.is-featured .title { font-size: 17px; }
+  .link-card.is-centered .title { font-size: 2.7em; }
 }
