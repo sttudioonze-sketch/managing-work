@@ -43,7 +43,7 @@ const SITE_DATA = {
       grupo1Subtitulo: "Artigos e podcasts sobre desenvolvimento Profissional e Pessoal"
     },
     hero: {
-      avatar: "images/avatar.png",
+      avatar: "images/avatar.jpg",
       nome: "Gabriel Bussinger",
       roleLines: [
         "Coordenador Técnico Geral no Vasco da Gama SAF",
@@ -184,7 +184,7 @@ const SITE_DATA = {
       grupo1Subtitulo: "Articles and podcasts on Professional and Personal development"
     },
     hero: {
-      avatar: "images/avatar.png",
+      avatar: "images/avatar.jpg",
       nome: "Gabriel Bussinger",
       roleLines: [
         "General Technical Coordinator at Vasco da Gama SAF",
@@ -325,7 +325,7 @@ const SITE_DATA = {
       grupo1Subtitulo: "Artículos y podcasts sobre desarrollo Profesional y Personal"
     },
     hero: {
-      avatar: "images/avatar.png",
+      avatar: "images/avatar.jpg",
       nome: "Gabriel Bussinger",
       roleLines: [
         "Coordinador Técnico General en Vasco da Gama SAF",
@@ -466,7 +466,7 @@ const SITE_DATA = {
       grupo1Subtitulo: "مقالات وبودكاست عن التطور المهني والشخصي"
     },
     hero: {
-      avatar: "images/avatar.png",
+      avatar: "images/avatar.jpg",
       nome: "غابرييل بوسينجر",
       roleLines: [
         "المنسق الفني العام في فاسكو دا جاما SAF",
