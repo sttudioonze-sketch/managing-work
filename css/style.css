@@ -538,8 +538,7 @@ button { font: inherit; }
   font-size: 27px;
   line-height: 1.2;
   padding: 4px 0 0;
-  letter-spacing: -0.01em;
-  text-transform: uppercase;
+  letter-spacing: 0;
   color: var(--accent);
 }
 .panel-subtitle {
@@ -720,8 +719,7 @@ button { font: inherit; }
   font-size: 28px;
   line-height: 1.2;
   padding: 4px 0;
-  letter-spacing: -0.01em;
-  text-transform: uppercase;
+  letter-spacing: 0;
   color: var(--accent);
   margin-bottom: 4px;
 }
@@ -821,8 +819,7 @@ button { font: inherit; }
   font-family: var(--font-display);
   font-weight: 400;
   font-size: 30px;
-  letter-spacing: -0.01em;
-  text-transform: uppercase;
+  letter-spacing: 0;
   line-height: 1.15;
   padding: 2px 0;
   display: block;
@@ -832,7 +829,7 @@ button { font: inherit; }
   font-family: "Protest Riot", cursive;
   font-weight: 400;
   font-size: 1.1em;
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: 0.01em;
   color: var(--accent);
   margin-bottom: 0;
@@ -1439,6 +1436,13 @@ button { font: inherit; }
 /* ==========================================================================
    Página de vendas da Mentoria
    ========================================================================== */
+.mentoria-logo-img {
+  display: block;
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  margin: 0 auto 26px;
+}
 .accent-word-inline { color: var(--accent); font-weight: 700; }
 
 .mentoria-hero {
@@ -1501,6 +1505,7 @@ button { font: inherit; }
   font-size: clamp(24px, 6.5vw, 32px);
   line-height: 1.1;
   color: var(--accent);
+  text-align: center;
 }
 .mentoria-body {
   margin: 0 0 12px;
@@ -1511,6 +1516,12 @@ button { font: inherit; }
 .mentoria-body:last-child { margin-bottom: 0; }
 .mentoria-body strong { color: var(--support); }
 .mentoria-body-center { text-align: center; }
+
+.mentoria-center .mentoria-eyebrow,
+.mentoria-center .mentoria-body { text-align: center; }
+.mentoria-center .metodologia-card,
+.mentoria-center .depoimento { text-align: center; }
+.mentoria-center .depoimento { border-left: none; border-top: 3px solid var(--accent); }
 
 /* Metodologia */
 .metodologia-grid {
@@ -1606,6 +1617,7 @@ button { font: inherit; }
 
 /* Planos */
 .plano-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1620,10 +1632,50 @@ button { font: inherit; }
   background: linear-gradient(135deg, rgba(20, 255, 227, 0.24) 0%, rgba(20, 255, 227, 0.09) 55%, rgba(58, 139, 255, 0.18) 100%);
   border: 1px solid rgba(20, 255, 227, 0.48);
   box-shadow: 0 0 0 1px rgba(20, 255, 227, 0.16);
+  padding-top: 40px;
+  overflow: visible;
 }
 .plano-mensal {
   background: var(--glass);
   border: 1px solid var(--border);
+}
+.plano-ribbon {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 20px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--bg);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(20, 255, 227, 0.35);
+}
+.plano-ribbon::before,
+.plano-ribbon::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+.plano-ribbon::before {
+  left: 0;
+  border-width: 5px 5px 0 0;
+  border-color: rgba(10, 90, 80, 0.55) transparent transparent transparent;
+}
+.plano-ribbon::after {
+  right: 0;
+  border-width: 5px 0 0 5px;
+  border-color: rgba(10, 90, 80, 0.55) transparent transparent transparent;
 }
 .plano-badge {
   display: inline-flex;
@@ -1647,20 +1699,22 @@ button { font: inherit; }
   color: var(--muted);
 }
 .plano-preco {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
+  display: block;
+  text-align: center;
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: 42px;
+  font-size: 48px;
   color: var(--support);
-  margin: 4px 0 0;
+  margin: 6px 0 0;
 }
-.plano-preco small {
+.plano-preco-unit {
+  display: block;
+  text-align: center;
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 12.5px;
   color: var(--muted);
+  margin-bottom: 4px;
 }
 .plano-preco-alt {
   color: var(--accent);

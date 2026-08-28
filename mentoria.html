@@ -63,38 +63,50 @@
 
   <main class="page">
 
-    <div class="page2-topbar" style="max-width:520px;">
+    <div class="page2-topbar">
       <a href="index.html" class="page2-back">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <span>Voltar</span>
       </a>
+      <div class="page2-signature">
+        <img src="images/assinatura-gabriel.png" alt="Gabriel Bussinger" class="signature-img signature-img-topbar" />
+      </div>
+      <div class="lang-switcher" id="lang-switcher" aria-label="Selecionar idioma"></div>
     </div>
+
+    <!-- ================= VÍDEO DE APRESENTAÇÃO ================= -->
+    <!-- Cole aqui o embed do vídeo (YouTube/Vimeo) dentro de <div class="page2-video-frame">,
+         ou troque por uma tag <video> — o container já mantém a proporção 16:9 automaticamente. -->
+    <div class="page2-video">
+      <div class="page2-video-frame">
+        <!-- <iframe src="https://www.youtube.com/embed/SEU_VIDEO_ID" title="Vídeo de apresentação" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+      </div>
+    </div>
+
+    <img src="images/logo-ecossistema.png" alt="Ecossistema Diário do Treinador" class="mentoria-logo-img" />
 
     <!-- ================= HERO ================= -->
     <section class="content-panel mentoria-hero">
-      <span class="mentoria-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-3.5 10.9c.5.4.8 1 .8 1.6v.5h5.4v-.5c0-.6.3-1.2.8-1.6A6 6 0 0012 3z"/><path d="M9.5 9.5a2.5 2.5 0 012.5-2.5" stroke-linecap="round"/></svg></span>
-      <p class="mentoria-eyebrow-top">Mentoria</p>
-      <h1 class="mentoria-h1">Diário do Treinador</h1>
       <img src="images/assinatura-gabriel.png" alt="Gabriel Bussinger" class="signature-img mentoria-signature" />
       <p class="mentoria-tagline">Treinador de Treinadores e Atletas</p>
     </section>
 
     <!-- ================= CONHEÇA, APLIQUE, TRANSFORME ================= -->
-    <section class="content-panel">
+    <section class="content-panel mentoria-center">
       <p class="mentoria-eyebrow">Descubra o poder de participar de um processo de <span class="accent-word-inline">Mentoria</span></p>
       <h2 class="mentoria-title">Conheça, Aplique, Transforme</h2>
       <p class="mentoria-body">A <strong>Mentoria Gabriel Bussinger</strong> é especializada em <span class="accent-word-inline">Desenvolvimento Profissional e Pessoal</span> para Treinadores e profissionais do futebol.</p>
     </section>
 
     <!-- ================= OBJETIVO ================= -->
-    <section class="content-panel">
+    <section class="content-panel mentoria-center">
       <h2 class="mentoria-title">Objetivo</h2>
       <p class="mentoria-body">Formação e desenvolvimento integral do treinador através da leitura e interpretação de best sellers, discussões e trocas de experiências.</p>
       <p class="mentoria-body">Proporcionar aos mentorados uma verdadeira autonomia de desenvolvimento baseada no estudo, reflexões e práticas contextualizadas no meio do futebol de base e profissional.</p>
     </section>
 
     <!-- ================= METODOLOGIA ================= -->
-    <section class="content-panel">
+    <section class="content-panel mentoria-center">
       <h2 class="mentoria-title">Metodologia</h2>
       <p class="mentoria-body mentoria-body-center">Os encontros seguem uma dinâmica baseada em 3 pontos:</p>
       <div class="metodologia-grid">
@@ -133,7 +145,7 @@
     </section>
 
     <!-- ================= RESULTADOS ================= -->
-    <section class="content-panel">
+    <section class="content-panel mentoria-center">
       <h2 class="mentoria-title">Resultados</h2>
       <p class="mentoria-body mentoria-body-center">Veja alguns resultados obtidos por mentorados ao longo das últimas temporadas</p>
       <div class="depoimentos">
@@ -167,9 +179,10 @@
       <h2 class="mentoria-title" style="text-align:center;">Escolha seu plano</h2>
 
       <div class="plano-card plano-anual">
-        <span class="plano-badge">Melhor oferta · Apenas 30 vagas</span>
+        <span class="plano-ribbon">Melhor oferta · Apenas 30 vagas</span>
         <span class="plano-nome">Plano Anual</span>
-        <span class="plano-preco">R$ 1.200<small>à vista no PIX</small></span>
+        <span class="plano-preco">R$ 1.200</span>
+        <span class="plano-preco-unit">à vista no PIX</span>
         <span class="plano-preco-alt">ou 12x de R$ 124,11 no cartão</span>
         <ul class="plano-checklist">
           <li>Pagamento anual</li>
@@ -183,7 +196,8 @@
 
       <div class="plano-card plano-mensal">
         <span class="plano-nome">Plano Mensal</span>
-        <span class="plano-preco">R$ 200<small>por sessão</small></span>
+        <span class="plano-preco">R$ 200</span>
+        <span class="plano-preco-unit">por sessão</span>
         <span class="plano-preco-alt">R$ 2.000 no total do ano · somente via PIX</span>
         <ul class="plano-checklist">
           <li>Pagamento mensal</li>
