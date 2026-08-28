@@ -34,12 +34,13 @@ const SITE_DATA = {
   pt: {
     ui: {
       eyebrow: "Ecossistema",
-      inscreverSe: "Inscrever-se",
+      inscreverSe: "Inscreva-se Aqui!",
       agendaTitulo: "Agenda",
       agendaHeading: "Palestras, Cursos e Eventos",
       footerFeitoPor: "Feito por",
       footerPortfolio: "Portfólio PRO",
-      grupo1Titulo: "Acompanhe"
+      grupo1Titulo: "Acompanhe",
+      grupo1Subtitulo: "Artigos e podcasts sobre desenvolvimento Profissional e Pessoal"
     },
     hero: {
       avatar: "images/avatar.png",
@@ -174,12 +175,13 @@ const SITE_DATA = {
   en: {
     ui: {
       eyebrow: "Ecosystem",
-      inscreverSe: "Sign up",
+      inscreverSe: "Sign Up Here!",
       agendaTitulo: "Agenda",
       agendaHeading: "Talks, Courses & Events",
       footerFeitoPor: "Built by",
       footerPortfolio: "PRO Portfolio",
-      grupo1Titulo: "Follow"
+      grupo1Titulo: "Follow",
+      grupo1Subtitulo: "Articles and podcasts on Professional and Personal development"
     },
     hero: {
       avatar: "images/avatar.png",
@@ -314,12 +316,13 @@ const SITE_DATA = {
   es: {
     ui: {
       eyebrow: "Ecosistema",
-      inscreverSe: "Inscribirse",
+      inscreverSe: "¡Inscríbete Aquí!",
       agendaTitulo: "Agenda",
       agendaHeading: "Charlas, Cursos y Eventos",
       footerFeitoPor: "Desarrollado por",
       footerPortfolio: "Portafolio PRO",
-      grupo1Titulo: "Sígueme"
+      grupo1Titulo: "Sígueme",
+      grupo1Subtitulo: "Artículos y podcasts sobre desarrollo Profesional y Personal"
     },
     hero: {
       avatar: "images/avatar.png",
@@ -454,12 +457,13 @@ const SITE_DATA = {
   ar: {
     ui: {
       eyebrow: "منظومة",
-      inscreverSe: "سجّل الآن",
+      inscreverSe: "سجّل هنا الآن!",
       agendaTitulo: "الأجندة",
       agendaHeading: "محاضرات ودورات وفعاليات",
       footerFeitoPor: "تطوير",
       footerPortfolio: "معرض الأعمال PRO",
-      grupo1Titulo: "تابعني"
+      grupo1Titulo: "تابعني",
+      grupo1Subtitulo: "مقالات وبودكاست عن التطور المهني والشخصي"
     },
     hero: {
       avatar: "images/avatar.png",

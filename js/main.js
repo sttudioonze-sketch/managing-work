@@ -185,16 +185,15 @@
           <span class="mes">${evento.mes}</span>
         </span>
         <span class="agenda-info">
-          <span class="agenda-meta">
-            <span class="local">${evento.local}</span>
-            <span class="agenda-sep">|</span>
-            ${evento.horario ? `<span class="agenda-hora">${evento.horario}</span><span class="agenda-sep">|</span>` : ""}
-            <span class="agenda-format">${evento.formato || "Online"}</span>
+          <span class="local">${evento.local}</span>
+          <span class="agenda-pills">
+            ${evento.cidadePais ? `<span class="agenda-pill">${ICONS.pin}${evento.cidadePais}</span>` : ""}
+            ${evento.horario ? `<span class="agenda-pill">${ICONS.clock}${evento.horario}</span>` : ""}
+            <span class="agenda-pill">${ICONS.format}${evento.formato || "Online"}</span>
           </span>
-          <span class="tema">${evento.tema}</span>
-          ${evento.cidadePais ? `<span class="agenda-cidade">${ICONS.pin || ""}${evento.cidadePais}</span>` : ""}
         </span>
       </span>
+      <span class="agenda-tema-full">${evento.tema}</span>
       <a class="agenda-btn-full" href="${evento.url}" target="_blank" rel="noopener noreferrer">${inscreverSeLabel}</a>
     `;
     li.appendChild(card);
@@ -273,6 +272,8 @@
     if (g1 && d.grupo1) {
       const g1TituloEl = $("#grupo1-titulo");
       if (g1TituloEl) g1TituloEl.textContent = d.ui.grupo1Titulo;
+      const g1SubtituloEl = $("#grupo1-subtitulo");
+      if (g1SubtituloEl) g1SubtituloEl.textContent = d.ui.grupo1Subtitulo;
       d.grupo1.links.forEach((link, i) => g1.appendChild(renderLinkRow(link, i * 0.06)));
     }
 
