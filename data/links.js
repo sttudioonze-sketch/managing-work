@@ -120,9 +120,10 @@ const SITE_DATA = {
           badgeStatus: "Inscrições abertas",
           subtitulo: "Conheça, aplique e transforme",
           descricao: "Desenvolvimento Profissional e Pessoal para Treinadores e profissionais do futebol",
-          url: "https://pay.hotmart.com/I103504037F?off=nhfhufix",
+          url: "mentoria.html",
           icone: "target",
-          featured: true
+          featured: true,
+          internal: true
         },
         {
           titulo: '<span class="accent-word">Best Sellers</span> Aplicados ao Futebol',
@@ -273,9 +274,10 @@ const SITE_DATA = {
           badgeStatus: "Enrollment open",
           subtitulo: "Learn it, apply it, transform",
           descricao: "Professional and personal development for coaches and football professionals",
-          url: "https://pay.hotmart.com/I103504037F?off=nhfhufix",
+          url: "mentoria.html",
           icone: "target",
-          featured: true
+          featured: true,
+          internal: true
         },
         {
           titulo: '<span class="accent-word">Best Sellers</span> Applied to Football',
@@ -426,9 +428,10 @@ const SITE_DATA = {
           badgeStatus: "Inscripciones abiertas",
           subtitulo: "Conoce, aplica, transforma",
           descricao: "Desarrollo profesional y personal para entrenadores y profesionales del fútbol",
-          url: "https://pay.hotmart.com/I103504037F?off=nhfhufix",
+          url: "mentoria.html",
           icone: "target",
-          featured: true
+          featured: true,
+          internal: true
         },
         {
           titulo: '<span class="accent-word">Best Sellers</span> Aplicados al Fútbol',
@@ -579,9 +582,10 @@ const SITE_DATA = {
           badgeStatus: "التسجيل متاح",
           subtitulo: "تعرّف، طبّق، تحوّل",
           descricao: "تطور مهني وشخصي للمدربين ومحترفي كرة القدم",
-          url: "https://pay.hotmart.com/I103504037F?off=nhfhufix",
+          url: "mentoria.html",
           icone: "target",
-          featured: true
+          featured: true,
+          internal: true
         },
         {
           titulo: '<span class="accent-word">أفضل الكتب مبيعاً</span> المطبّقة على كرة القدم',
