@@ -114,12 +114,6 @@ const SITE_DATA = {
       marquee: ["Mindset", "Desenvolvimento Profissional", "Desenvolvimento Pessoal", "Leitura", "Network", "Autoconhecimento"],
       itens: [
         {
-          titulo: 'Grupo Aberto no <span class="accent-word">WhatsApp</span>',
-          descricao: "Comunidade do Diário do Treinador",
-          url: "https://chat.whatsapp.com/Gy7ilSwjdTG2no4LeDbzgm",
-          icone: "whatsapp"
-        },
-        {
           titulo: '<span class="accent-word">Mentoria</span> Diário do Treinador',
           badge: "Temporada 2026 — Inscrições disponíveis",
           subtitulo: "Conheça, aplique e transforme",
@@ -148,6 +142,12 @@ const SITE_DATA = {
           descricao: "Palestras, Podcasts e conteúdos aprofundados, para profissionais do futebol",
           url: "https://www.youtube.com/@gabrielbussinger3386",
           icone: "youtube"
+        },
+        {
+          titulo: 'Grupo Aberto no <span class="accent-word">WhatsApp</span>',
+          descricao: "Comunidade do Diário do Treinador",
+          url: "https://chat.whatsapp.com/Gy7ilSwjdTG2no4LeDbzgm",
+          icone: "whatsapp"
         },
         {
           titulo: '<span class="accent-word">Suporte</span>',
@@ -255,12 +255,6 @@ const SITE_DATA = {
       marquee: ["Mindset", "Professional Development", "Personal Development", "Reading", "Network", "Self-Knowledge"],
       itens: [
         {
-          titulo: 'Open <span class="accent-word">WhatsApp</span> Group',
-          descricao: "Coach's Diary community",
-          url: "https://chat.whatsapp.com/Gy7ilSwjdTG2no4LeDbzgm",
-          icone: "whatsapp"
-        },
-        {
           titulo: `<span class="accent-word">Mentorship</span> — Coach's Diary`,
           badge: "2026 Season — Enrollment open",
           subtitulo: "Learn it, apply it, transform",
@@ -289,6 +283,12 @@ const SITE_DATA = {
           descricao: "Talks, podcasts and in-depth content for football professionals",
           url: "https://www.youtube.com/@gabrielbussinger3386",
           icone: "youtube"
+        },
+        {
+          titulo: 'Open <span class="accent-word">WhatsApp</span> Group',
+          descricao: "Coach's Diary community",
+          url: "https://chat.whatsapp.com/Gy7ilSwjdTG2no4LeDbzgm",
+          icone: "whatsapp"
         },
         {
           titulo: '<span class="accent-word">Support</span>',
@@ -396,12 +396,6 @@ const SITE_DATA = {
       marquee: ["Mentalidad", "Desarrollo Profesional", "Desarrollo Personal", "Lectura", "Red de Contactos", "Autoconocimiento"],
       itens: [
         {
-          titulo: 'Grupo Abierto de <span class="accent-word">WhatsApp</span>',
-          descricao: "Comunidad del Diario del Entrenador",
-          url: "https://chat.whatsapp.com/Gy7ilSwjdTG2no4LeDbzgm",
-          icone: "whatsapp"
-        },
-        {
           titulo: '<span class="accent-word">Mentoría</span> Diario del Entrenador',
           badge: "Temporada 2026 — Inscripciones abiertas",
           subtitulo: "Conoce, aplica, transforma",
@@ -430,6 +424,12 @@ const SITE_DATA = {
           descricao: "Charlas, podcasts y contenidos a profundidad, para profesionales del fútbol",
           url: "https://www.youtube.com/@gabrielbussinger3386",
           icone: "youtube"
+        },
+        {
+          titulo: 'Grupo Abierto de <span class="accent-word">WhatsApp</span>',
+          descricao: "Comunidad del Diario del Entrenador",
+          url: "https://chat.whatsapp.com/Gy7ilSwjdTG2no4LeDbzgm",
+          icone: "whatsapp"
         },
         {
           titulo: '<span class="accent-word">Soporte</span>',
@@ -537,12 +537,6 @@ const SITE_DATA = {
       marquee: ["العقلية", "التطور المهني", "التطور الشخصي", "القراءة", "شبكة العلاقات", "معرفة الذات"],
       itens: [
         {
-          titulo: 'مجموعة <span class="accent-word">واتساب</span> مفتوحة',
-          descricao: "مجتمع يوميات المدرب",
-          url: "https://chat.whatsapp.com/Gy7ilSwjdTG2no4LeDbzgm",
-          icone: "whatsapp"
-        },
-        {
           titulo: '<span class="accent-word">الإرشاد</span> — يوميات المدرب',
           badge: "موسم 2026 — التسجيل متاح",
           subtitulo: "تعرّف، طبّق، تحوّل",
@@ -571,6 +565,12 @@ const SITE_DATA = {
           descricao: "محاضرات وبودكاست ومحتوى معمّق لمحترفي كرة القدم",
           url: "https://www.youtube.com/@gabrielbussinger3386",
           icone: "youtube"
+        },
+        {
+          titulo: 'مجموعة <span class="accent-word">واتساب</span> مفتوحة',
+          descricao: "مجتمع يوميات المدرب",
+          url: "https://chat.whatsapp.com/Gy7ilSwjdTG2no4LeDbzgm",
+          icone: "whatsapp"
         },
         {
           titulo: '<span class="accent-word">الدعم</span>',

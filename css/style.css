@@ -448,6 +448,10 @@ button { font: inherit; }
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
+@keyframes marqueeReverse {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
 .brand-item {
   display: flex;
   align-items: center;
@@ -932,13 +936,14 @@ button { font: inherit; }
   align-self: center;
 }
 .link-card.is-centered .title {
-  font-size: 4.05em;
+  font-size: clamp(28px, 9vw, 52px);
   font-family: "Protest Riot", cursive;
   font-weight: 400;
   letter-spacing: 0.005em;
   -webkit-text-stroke: 0;
-  line-height: 0.98;
+  line-height: 1.05;
   padding: 0 2px;
+  white-space: nowrap;
 }
 .link-card.is-centered .subtitle {
   font-size: 19.5px;
@@ -1122,8 +1127,8 @@ button { font: inherit; }
 .brand-carousel {
   width: 100%;
   max-width: 100%;
-  margin: 12px 0 24px;
-  padding: 18px 0;
+  margin: 0 0 20px;
+  padding: 10px 0 0;
   overflow: hidden;
   -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
   mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
@@ -1132,13 +1137,13 @@ button { font: inherit; }
   display: flex;
   align-items: center;
   width: max-content;
-  animation: marquee 22s linear infinite;
+  animation: marqueeReverse 22s linear infinite;
 }
 .brand-carousel-track:hover { animation-play-state: paused; }
 .brand-carousel-track img {
-  height: 34px;
+  height: 22px;
   width: auto;
-  margin: 0 28px;
+  margin: 0 20px;
   flex: none;
   opacity: 0.85;
   filter: drop-shadow(0 0 6px rgba(20, 255, 227, 0.12));
@@ -1193,6 +1198,46 @@ button { font: inherit; }
   width: 100%;
   max-width: 480px;
   margin: 0 auto 26px;
+}
+.page2-video {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto 26px;
+}
+.page2-video-frame {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* proporção 16:9 */
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: rgba(245, 245, 245, 0.04);
+  border: 1px solid var(--border);
+}
+.page2-video-frame::after {
+  content: "Vídeo de apresentação";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted-dim);
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+.page2-video-frame:has(iframe)::after,
+.page2-video-frame:has(video)::after {
+  display: none;
+}
+.page2-video-frame iframe,
+.page2-video-frame video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 .page2-back {
   display: inline-flex;
@@ -1265,23 +1310,19 @@ button { font: inherit; }
 
   /* Cards em destaque (Mentoria/Best Seller) mais compactos — título nunca corta,
      reduz a fonte pra caber ao invés de usar reticências */
-  .link-card.is-featured { padding: 16px; }
   .link-card.is-featured .link-icon { width: 44px; height: 44px; }
   .link-card.is-featured .link-icon svg { width: 21px; height: 21px; }
   .link-badge { font-size: 9px; padding: 2px 8px; }
   .link-card.is-featured .title {
-    font-size: 19px;
-    line-height: 1.18;
-    white-space: normal;
+    font-size: clamp(16px, 6vw, 21px);
+    line-height: 1.15;
+    white-space: nowrap;
     display: block;
     overflow: visible;
     text-overflow: unset;
   }
-  .link-card.is-centered .title {
-    font-size: 2.05em;
-    line-height: 1.02;
-  }
-  .link-card.is-featured .subtitle { font-size: 11px; }
+  .link-card.is-featured { padding: 20px; }
+  .link-card.is-featured .subtitle { font-size: 11px; white-space: nowrap; }
   .link-card.is-centered .subtitle { font-size: 16px; }
   .link-card.is-featured .desc { font-size: 11.5px; -webkit-line-clamp: 2; }
   .cta-line { font-size: 12.5px; margin-top: 8px; }
@@ -1294,5 +1335,4 @@ button { font: inherit; }
   .link-card { padding: 13px; }
   .link-body .title { font-size: 12.5px; }
   .link-card.is-featured .title { font-size: 17px; }
-  .link-card.is-centered .title { font-size: 2.7em; }
 }
