@@ -150,9 +150,10 @@
             </span>
           </span>
         ` : ""}
+        ${link.eyebrow ? `<span class="link-eyebrow">${link.eyebrow}</span>` : ""}
         <span class="title">${link.titulo}</span>
         ${link.subtitulo ? `<span class="subtitle">${link.subtitulo}</span>` : ""}
-        <span class="desc">${link.descricao || ""}</span>
+        ${link.descricao ? `<span class="desc">${link.descricao}</span>` : ""}
         ${link.cta ? `<span class="cta-line">${link.cta}${ICONS.arrow}</span>` : ""}
         ${link.livros ? `
           <span class="mini-strip">
@@ -168,6 +169,8 @@
     if (link.featured) {
       const badgeEl = a.querySelector(".link-badge");
       if (badgeEl) badgeEl.style.transitionDelay = "0.05s";
+      const eyebrowEl = a.querySelector(".link-eyebrow");
+      if (eyebrowEl) eyebrowEl.style.transitionDelay = "0.05s";
 
       const titleEl = a.querySelector(".title");
       const typewriter = typewriterize(titleEl);

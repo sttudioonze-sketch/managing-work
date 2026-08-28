@@ -98,9 +98,10 @@ const SITE_DATA = {
       icone: "mail"
     },
     ecosystem: {
-      titulo: '<span class="accent-word">Ecossistema</span> Diário do Treinador',
-      subtitulo: "Conheça, aplique e transforme",
-      descricao: "Um ecossistema completo para educação, evolução e desenvolvimento integral de treinadores e profissionais do futebol",
+      eyebrow: "Acesse aqui",
+      titulo: "Mentoria, Cursos e Conteúdos",
+      subtitulo: "Conheça o Diário do Treinador, nossos canais para a formação integral de treinadores e profissionais do futebol",
+      descricao: "",
       url: "index.html",
       icone: "books",
       featured: true,
@@ -243,9 +244,10 @@ const SITE_DATA = {
       icone: "mail"
     },
     ecosystem: {
-      titulo: `<span class="accent-word">Ecosystem</span> — Coach's Diary`,
-      subtitulo: "Learn it, apply it, transform",
-      descricao: "A complete ecosystem for the education, growth, and full development of coaches and football professionals",
+      eyebrow: "Access here",
+      titulo: "Mentorship, Courses and Content",
+      subtitulo: "Discover the Coach's Diary, our channels for the full development of coaches and football professionals",
+      descricao: "",
       url: "index.html",
       icone: "books",
       featured: true,
@@ -388,9 +390,10 @@ const SITE_DATA = {
       icone: "mail"
     },
     ecosystem: {
-      titulo: '<span class="accent-word">Ecosistema</span> Diario del Entrenador',
-      subtitulo: "Conoce, aplica, transforma",
-      descricao: "Un ecosistema completo para la educación, evolución y desarrollo integral de entrenadores y profesionales del fútbol",
+      eyebrow: "Accede aquí",
+      titulo: "Mentoría, Cursos y Contenidos",
+      subtitulo: "Conoce el Diario del Entrenador, nuestros canales para la formación integral de entrenadores y profesionales del fútbol",
+      descricao: "",
       url: "index.html",
       icone: "books",
       featured: true,
@@ -533,9 +536,10 @@ const SITE_DATA = {
       icone: "mail"
     },
     ecosystem: {
-      titulo: '<span class="accent-word">منظومة</span> يوميات المدرب',
-      subtitulo: "تعرّف، طبّق، تحوّل",
-      descricao: "منظومة متكاملة لتعليم وتطوير مدربي ومحترفي كرة القدم بشكل شامل",
+      eyebrow: "ادخل من هنا",
+      titulo: "الإرشاد والدورات والمحتوى",
+      subtitulo: "تعرّف على يوميات المدرب، قنواتنا للتطوير الشامل لمدربي ومحترفي كرة القدم",
+      descricao: "",
       url: "index.html",
       icone: "books",
       featured: true,

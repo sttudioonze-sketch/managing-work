@@ -870,6 +870,7 @@ button { font: inherit; }
    descrição, cta, mini-carrossel) — badge aparece logo, o resto após a
    digitação do título terminar (delay calculado via JS) */
 .link-card.is-featured .link-badge,
+.link-card.is-featured .link-eyebrow,
 .link-card.is-featured .subtitle,
 .link-card.is-featured .desc,
 .link-card.is-featured .cta-line,
@@ -879,6 +880,7 @@ button { font: inherit; }
   transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
 }
 .link-card.is-featured.is-visible .link-badge,
+.link-card.is-featured.is-visible .link-eyebrow,
 .link-card.is-featured.is-visible .subtitle,
 .link-card.is-featured.is-visible .desc,
 .link-card.is-featured.is-visible .cta-line,
@@ -936,18 +938,32 @@ button { font: inherit; }
   align-self: center;
 }
 .link-card.is-centered .title {
-  font-size: clamp(32px, 10.5vw, 60px);
+  font-size: clamp(22px, 7vw, 34px);
   font-family: "Protest Riot", cursive;
   font-weight: 400;
   letter-spacing: 0.005em;
   -webkit-text-stroke: 0;
-  line-height: 1.05;
+  line-height: 1.15;
   padding: 0 2px;
-  white-space: nowrap;
+  white-space: normal;
+}
+.link-eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 12.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
 }
 .link-card.is-centered .subtitle {
-  font-size: 19.5px;
-  margin-top: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+  text-transform: none;
+  line-height: 1.45;
+  margin-top: 10px;
 }
 .link-card.is-centered .link-arrow { display: none; }
 .link-card.is-centered .cta-line {
@@ -1393,7 +1409,7 @@ button { font: inherit; }
     font-size: 1.1em;
   }
   .link-card.is-featured:not(.is-centered) .subtitle { font-size: 13px; white-space: nowrap; margin-top: 2px; }
-  .link-card.is-centered .subtitle { font-size: 16px; }
+  .link-card.is-centered .subtitle { font-size: 14px; }
   .link-card.is-featured:not(.is-centered) .desc {
     font-size: 12.5px;
     -webkit-line-clamp: 3;
