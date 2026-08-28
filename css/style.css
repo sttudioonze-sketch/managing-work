@@ -295,13 +295,13 @@ button { font: inherit; }
 }
 .signature-img {
   display: block;
-  height: clamp(60px, 14vw, 88px);
+  height: clamp(74px, 17vw, 108px);
   width: auto;
   max-width: 100%;
   filter: drop-shadow(0 0 10px rgba(20, 255, 227, 0.25));
 }
 .signature-img-footer {
-  height: 54px;
+  height: 70px;
   margin: 0 auto;
   filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(255, 255, 255, 0.15));
 }
@@ -336,7 +336,7 @@ button { font: inherit; }
   display: inline-block;
   width: 3.5px;
   height: 3.5px;
-  margin: 0 8px;
+  margin: 0 6px 0 0;
   border-radius: 50%;
   background: var(--accent);
   vertical-align: middle;
@@ -404,8 +404,8 @@ button { font: inherit; }
   animation: heroIn 1s var(--ease) 0.2s both;
 }
 .social-btn {
-  width: 50px;
-  height: 50px;
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -415,7 +415,7 @@ button { font: inherit; }
   color: var(--accent);
   transition: transform 0.3s var(--ease), border-color 0.3s var(--ease), background 0.3s var(--ease), color 0.3s var(--ease);
 }
-.social-btn svg { width: 23px; height: 23px; }
+.social-btn svg { width: 28px; height: 28px; }
 .social-btn:hover {
   transform: translateY(-3px);
   border-color: var(--accent);
@@ -948,7 +948,19 @@ button { font: inherit; }
 .link-card.is-centered .desc {
   align-self: center;
 }
-.link-card.is-centered .title { font-size: 1.35em; }
+.link-card.is-centered .title {
+  font-size: 2.05em;
+  font-family: "Protest Riot", cursive;
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  -webkit-text-stroke: 0;
+  line-height: 1.08;
+  padding: 0 6px;
+}
+.link-card.is-centered .subtitle {
+  font-size: 15px;
+  margin-top: 4px;
+}
 .link-card.is-centered .link-arrow { display: none; }
 .link-card.is-centered .cta-line {
   display: flex;

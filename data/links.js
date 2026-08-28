@@ -38,14 +38,16 @@ const SITE_DATA = {
       agendaTitulo: "Agenda",
       agendaHeading: "Palestras, Cursos e Eventos",
       footerFeitoPor: "Feito por",
-      footerPortfolio: "Portfólio PRO"
+      footerPortfolio: "Portfólio PRO",
+      grupo1Titulo: "Acompanhe"
     },
     hero: {
       avatar: "images/avatar.png",
       nome: "Gabriel Bussinger",
       roleLines: [
         "Coordenador Técnico Geral no Vasco da Gama SAF",
-        "Mentor de Profissionais do Futebol | Idealizador do Podcast Diário do Treinador"
+        "Mentor de Profissionais do Futebol",
+        "Autor do Podcast Diário do Treinador"
       ],
       badges: [
         { label: "Instrutor", org: "CONMEBOL" },
@@ -62,8 +64,6 @@ const SITE_DATA = {
       links: [
         {
           titulo: 'Assinar <span class="accent-word">Newsletter</span>',
-          badge: "Acompanhe",
-          badgeIcon: "linkedin",
           descricao: "Acompanhe no LinkedIn",
           url: "https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7462991799133855744",
           icone: "linkedin"
@@ -178,14 +178,16 @@ const SITE_DATA = {
       agendaTitulo: "Agenda",
       agendaHeading: "Talks, Courses & Events",
       footerFeitoPor: "Built by",
-      footerPortfolio: "PRO Portfolio"
+      footerPortfolio: "PRO Portfolio",
+      grupo1Titulo: "Follow"
     },
     hero: {
       avatar: "images/avatar.png",
       nome: "Gabriel Bussinger",
       roleLines: [
         "General Technical Coordinator at Vasco da Gama SAF",
-        "Mentor for Football Professionals | Creator of the Coach's Diary Podcast"
+        "Mentor for Football Professionals",
+        "Author of the Coach's Diary Podcast"
       ],
       badges: [
         { label: "Instructor", org: "CONMEBOL" },
@@ -202,8 +204,6 @@ const SITE_DATA = {
       links: [
         {
           titulo: 'Subscribe to my <span class="accent-word">Newsletter</span>',
-          badge: "Follow",
-          badgeIcon: "linkedin",
           descricao: "Follow on LinkedIn",
           url: "https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7462991799133855744",
           icone: "linkedin"
@@ -318,14 +318,16 @@ const SITE_DATA = {
       agendaTitulo: "Agenda",
       agendaHeading: "Charlas, Cursos y Eventos",
       footerFeitoPor: "Desarrollado por",
-      footerPortfolio: "Portafolio PRO"
+      footerPortfolio: "Portafolio PRO",
+      grupo1Titulo: "Sígueme"
     },
     hero: {
       avatar: "images/avatar.png",
       nome: "Gabriel Bussinger",
       roleLines: [
         "Coordinador Técnico General en Vasco da Gama SAF",
-        "Mentor de Profesionales del Fútbol | Creador del Podcast Diario del Entrenador"
+        "Mentor de Profesionales del Fútbol",
+        "Autor del Podcast Diario del Entrenador"
       ],
       badges: [
         { label: "Instructor", org: "CONMEBOL" },
@@ -342,8 +344,6 @@ const SITE_DATA = {
       links: [
         {
           titulo: 'Suscribirme al <span class="accent-word">Newsletter</span>',
-          badge: "Sígueme",
-          badgeIcon: "linkedin",
           descricao: "Sígueme en LinkedIn",
           url: "https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7462991799133855744",
           icone: "linkedin"
@@ -458,14 +458,16 @@ const SITE_DATA = {
       agendaTitulo: "الأجندة",
       agendaHeading: "محاضرات ودورات وفعاليات",
       footerFeitoPor: "تطوير",
-      footerPortfolio: "معرض الأعمال PRO"
+      footerPortfolio: "معرض الأعمال PRO",
+      grupo1Titulo: "تابعني"
     },
     hero: {
       avatar: "images/avatar.png",
       nome: "غابرييل بوسينجر",
       roleLines: [
         "المنسق الفني العام في فاسكو دا جاما SAF",
-        "موجّه لمحترفي كرة القدم | مؤسس بودكاست يوميات المدرب"
+        "موجّه لمحترفي كرة القدم",
+        "مؤلّف بودكاست يوميات المدرب"
       ],
       badges: [
         { label: "مدرب", org: "CONMEBOL" },
@@ -482,8 +484,6 @@ const SITE_DATA = {
       links: [
         {
           titulo: 'اشترك في <span class="accent-word">النشرة الإخبارية</span>',
-          badge: "تابعني",
-          badgeIcon: "linkedin",
           descricao: "تابعني على LinkedIn",
           url: "https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7462991799133855744",
           icone: "linkedin"

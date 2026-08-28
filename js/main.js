@@ -248,9 +248,8 @@
       const rolesHost = $("#hero-roles");
       rolesHost.innerHTML = (d.hero.roleLines || [])
         .map((line, i) => {
-          const parts = line.split("|").map(s => s.trim());
-          const sep = i === 0 ? ' <span class="sep">|</span> ' : ' <span class="role-dot"></span> ';
-          return `<p class="role-line${i === 0 ? " is-primary" : ""}">${parts.join(sep)}</p>`;
+          if (i === 0) return `<p class="role-line is-primary">${line}</p>`;
+          return `<p class="role-line"><span class="role-dot"></span>${line}</p>`;
         })
         .join("");
 
@@ -272,6 +271,8 @@
     // ---------- PÁGINA 1: Caixa 1 — Newsletter + Podcast ----------
     const g1 = $("#grupo1-lista");
     if (g1 && d.grupo1) {
+      const g1TituloEl = $("#grupo1-titulo");
+      if (g1TituloEl) g1TituloEl.textContent = d.ui.grupo1Titulo;
       d.grupo1.links.forEach((link, i) => g1.appendChild(renderLinkRow(link, i * 0.06)));
     }
 
