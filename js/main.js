@@ -254,10 +254,11 @@
     document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
 
     // ---------- PÁGINA 1: Hero (Gabriel Bussinger) ----------
-    const heroAvatar = $("#hero-avatar");
-    if (heroAvatar) {
-      heroAvatar.src = d.hero.avatar;
-      $("#hero-nome").innerHTML = `<img src="images/assinatura-gabriel.png" alt="${d.hero.nome}" class="signature-img" />`;
+    const heroNomeEl = $("#hero-nome");
+    if (heroNomeEl) {
+      const heroAvatar = $("#hero-avatar");
+      if (heroAvatar) heroAvatar.src = d.hero.avatar;
+      heroNomeEl.innerHTML = `<img src="images/assinatura-gabriel.png" alt="${d.hero.nome}" class="signature-img" />`;
 
       const rolesHost = $("#hero-roles");
       rolesHost.innerHTML = (d.hero.roleLines || [])
