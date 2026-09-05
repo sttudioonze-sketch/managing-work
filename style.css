@@ -248,16 +248,13 @@ button { font: inherit; }
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding-top: 260px;
+  padding: 28px 20px;
   border-radius: var(--radius);
   overflow: hidden;
 }
 .hero-bg-video {
   position: absolute;
   inset: 0;
-  height: 300px;
-  border-radius: var(--radius);
-  overflow: hidden;
   z-index: 0;
 }
 .hero-bg-video video {
@@ -268,7 +265,7 @@ button { font: inherit; }
 .hero-bg-video-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(8,14,32,0.15) 0%, var(--bg) 92%);
+  background: linear-gradient(180deg, rgba(8,14,32,0.55) 0%, rgba(8,14,32,0.75) 100%);
 }
 .hero-v2 > *:not(.hero-bg-video) {
   position: relative;
