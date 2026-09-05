@@ -248,8 +248,18 @@ button { font: inherit; }
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 28px 20px;
-  border-radius: var(--radius);
+}
+.hero-video-block {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  aspect-ratio: 4 / 5;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 20px 20px 24px;
+  margin-bottom: 10px;
   overflow: hidden;
 }
 .hero-bg-video {
@@ -265,9 +275,9 @@ button { font: inherit; }
 .hero-bg-video-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(8,14,32,0.55) 0%, rgba(8,14,32,0.75) 100%);
+  background: linear-gradient(180deg, rgba(8,14,32,0.05) 0%, rgba(8,14,32,0.12) 50%, rgba(8,14,32,0.6) 100%);
 }
-.hero-v2 > *:not(.hero-bg-video) {
+.hero-video-block > *:not(.hero-bg-video) {
   position: relative;
   z-index: 1;
 }
