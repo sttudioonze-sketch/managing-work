@@ -254,12 +254,13 @@ button { font: inherit; }
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  aspect-ratio: 4 / 5;
+  margin-top: -56px;
+  aspect-ratio: 10 / 7;
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding: 20px 20px 24px;
-  margin-bottom: 10px;
+  padding: 20px 20px 8px;
+  margin-bottom: 2px;
   overflow: hidden;
 }
 .hero-bg-video {
@@ -275,7 +276,7 @@ button { font: inherit; }
 .hero-bg-video-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(8,14,32,0.05) 0%, rgba(8,14,32,0.12) 50%, rgba(8,14,32,0.6) 100%);
+  background: linear-gradient(180deg, rgba(8,14,32,0) 0%, rgba(8,14,32,0.03) 35%, rgba(8,14,32,0.18) 60%, rgba(8,14,32,0.55) 82%, var(--bg) 100%);
 }
 .hero-video-block > *:not(.hero-bg-video) {
   position: relative;
@@ -1362,6 +1363,7 @@ button { font: inherit; }
   .page { padding-top: 44px; padding-left: 16px; padding-right: 16px; }
   .avatar-wrap { width: 128px; height: 128px; }
   .hero-v2 h1 { font-size: 32px; }
+  .hero-video-block { margin-top: -44px; }
 
   /* Pills da agenda (Cidade/Horário/Formato) mais compactas pra caber numa linha só */
   .agenda-pills { gap: 4px; flex-wrap: nowrap; }
